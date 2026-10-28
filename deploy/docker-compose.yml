@@ -1,0 +1,28 @@
+# ============================================================
+# ONEIRO PARIS — Hébergement local + Cloudflare Tunnel
+# Prérequis : Docker Desktop installé.
+# 1) copier .env.example vers .env et coller votre TUNNEL_TOKEN
+# 2) docker compose up -d
+# ============================================================
+
+services:
+
+  web:
+    image: nginx:alpine
+    container_name: oneiro-web
+    volumes:
+      - ../site:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    restart: unless-stopped
+    # Décommentez pour tester en local sans tunnel : http://localhost:8080
+    # ports:
+    #   - "8080:80"
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: oneiro-tunnel
+    command: tunnel --no-autoupdate run --token ${TUNNEL_TOKEN}
+    env_file: .env
+    depends_on:
+      - web
+    restart: unless-stopped

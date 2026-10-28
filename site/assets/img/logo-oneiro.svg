@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Recréation vectorielle du logo Oneiro (07/2026), proportions relevées sur le logo officiel (1200x530).
+     Le texte utilise Cormorant Garamond (police à charger, sinon fallback serif).
+     Si vous disposez du vectoriel officiel de votre designer (AI/EPS/SVG), préférez-le. -->
+<svg viewBox="0 0 1200 530" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Oneiro Paris" fill="none" stroke="#FFFFFF">
+  <g stroke-width="10">
+    <path d="M 420 103 Q 600 -99 780 103 Q 600 305 420 103 Z"/>
+    <path d="M 437 103 Q 600 -80 763 103 Q 600 286 437 103 Z"/>
+    <circle cx="600" cy="103" r="77"/>
+    <circle cx="600" cy="103" r="52"/>
+  </g>
+  <g stroke-width="6">
+    <path d="M 600 50.5 Q 656 103 600 155.5 Q 544 103 600 50.5 Z"/>
+    <path d="M 600 56 Q 624 103 600 150 Q 576 103 600 56 Z"/>
+    <path d="M 600 50.5 L 581.7 72 L 589.6 86 L 572 103 L 589.6 120 L 581.7 134 L 600 155.5"/>
+    <path d="M 600 50.5 L 618.3 72 L 610.4 86 L 628 103 L 610.4 120 L 618.3 134 L 600 155.5"/>
+  </g>
+  <text x="600" y="525" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-size="355" font-weight="500" textLength="1190" lengthAdjust="spacingAndGlyphs" fill="#FFFFFF" stroke="none">ONEIRO</text>
+</svg>

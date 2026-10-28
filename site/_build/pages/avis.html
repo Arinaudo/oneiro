@@ -1,0 +1,78 @@
+<section class="page-head section--cream">
+  <div class="wrap">
+    <span class="kicker">Avis clients</span>
+    <h1>Ce que disent celles et ceux qui nous ont fait confiance</h1>
+    <p class="section-sub">Chaque avis publié ici provient d'un client réel, après réception de sa pièce. Nous n'en retirons aucun&nbsp;: les réserves sont aussi utiles que les compliments.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div id="avis-summary"></div>
+    <div class="reviews" id="avis-zone"></div>
+    <div id="avis-empty" style="display:none">
+      <div class="notice" style="max-width:760px;margin-top:0">
+        <b>Les premiers avis arrivent bientôt.</b> La maison est jeune&nbsp;: nos clients reçoivent leurs pièces et nous leur demandons systématiquement leur retour. Ils seront publiés ici tels quels. En attendant, <a href="rendez-vous.html">parlons de votre projet en visio</a> — vous jugerez par vous-même.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--cream" id="deposer">
+  <div class="wrap prose">
+    <span class="kicker reveal">Vous êtes client&nbsp;?</span>
+    <h2 class="mt-0 reveal">Partagez votre expérience</h2>
+    <p class="reveal">Votre retour aide les prochains à se décider — et nous aide à progresser. Quelques lignes suffisent.</p>
+    <div class="btn-row reveal" style="margin-top:26px">
+      <a class="btn btn--solid" id="avis-cta" href="#">Déposer un avis</a>
+      <a class="btn" data-whatsapp="Bonjour, je souhaite vous laisser un avis sur ma commande." href="#">Nous l'envoyer sur WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <h2 class="reveal">Un projet en tête&nbsp;?</h2>
+  <p class="reveal">Rendez-vous visio de 30 minutes, offert et sans engagement.</p>
+  <div class="btn-row reveal"><a class="btn btn--gold" href="rendez-vous.html">Prendre rendez-vous</a></div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const list = Array.isArray(ONEIRO_CONFIG.reviews) ? ONEIRO_CONFIG.reviews : [];
+  const zone = document.getElementById("avis-zone");
+  const summary = document.getElementById("avis-summary");
+
+  if (!list.length) {
+    document.getElementById("avis-empty").style.display = "";
+  } else {
+    const rated = list.filter(r => r.rating);
+    if (rated.length) {
+      const avg = rated.reduce((a, r) => a + r.rating, 0) / rated.length;
+      summary.innerHTML = `
+        <div class="rating-summary">
+          <span class="rating-summary__score">${avg.toFixed(1).replace(".", ",")}</span>
+          <span class="review__stars" aria-hidden="true">${O.stars(avg)}</span>
+          <span class="rating-summary__count">sur 5 — ${list.length} avis client${list.length > 1 ? "s" : ""}</span>
+        </div>`;
+    }
+    zone.innerHTML = list.map(r => O.reviewCard(r)).join("");
+    O.observeReveals(zone);
+  }
+
+  // Bouton : lien vers la fiche d'avis publique si configurée, sinon email
+  const cta = document.getElementById("avis-cta");
+  if (ONEIRO_CONFIG.reviewUrl) {
+    cta.href = ONEIRO_CONFIG.reviewUrl;
+    cta.target = "_blank";
+    cta.rel = "noopener";
+  } else {
+    cta.href = O.mailto("Mon avis sur ma commande Oneiro",
+      "Bonjour,\n\nVoici mon retour sur ma commande :\n\n" +
+      "- Pièce reçue : \n" +
+      "- Ma note (sur 5) : \n" +
+      "- Mon avis : \n\n" +
+      "- Prénom et initiale du nom à publier : \n\n" +
+      "Vous pouvez publier cet avis sur votre site.\n");
+  }
+});
+</script>

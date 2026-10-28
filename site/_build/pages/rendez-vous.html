@@ -1,0 +1,228 @@
+<section class="page-head section--cream">
+  <div class="wrap">
+    <span class="kicker">Rendez-vous conseil</span>
+    <h1>Trente minutes pour donner forme à votre projet</h1>
+    <p class="section-sub">Un rendez-vous en visio ou en personne à Paris, offert et sans engagement, avec la personne qui suivra votre projet de bout en bout. Pas de script commercial&nbsp;: vos questions, nos réponses franches — y compris « ce modèle n'est pas fait pour vous ».</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <span class="kicker reveal">Concrètement</span>
+    <h2 class="section-title reveal">Ce qui se passe pendant (et après) le rendez-vous</h2>
+    <div class="steps" style="grid-template-columns:repeat(3,1fr)">
+      <div class="step reveal">
+        <h3>On écoute</h3>
+        <p>Votre projet, l'occasion, le budget, les goûts de la personne qui portera le bijou. Envoyez-nous vos photos ou vidéos d'inspiration en amont si vous en avez — ou venez les mains vides, c'est très bien aussi.</p>
+      </div>
+      <div class="step reveal">
+        <h3>On éclaire</h3>
+        <p>Les 4C sans jargon, naturel vs laboratoire chiffres en main, les pièges à éviter, et une fourchette de prix honnête pour votre cahier des charges.</p>
+      </div>
+      <div class="step reveal">
+        <h3>On propose</h3>
+        <p>Sous 48 h, vous recevez par email 2-3 pistes concrètes&nbsp;: pierres certifiées présélectionnées, pistes de design, devis indicatifs. Vous décidez — ou pas. Aucune relance insistante.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--cream" id="reserver">
+  <div class="wrap">
+    <span class="kicker reveal">Réserver</span>
+    <h2 class="section-title reveal">Choisissez votre créneau</h2>
+    <p class="section-sub reveal">Voici nos prochaines disponibilités. Choisissez le format — visio ou en personne à Paris — puis le créneau qui vous arrange : nous confirmons par email sous 24&nbsp;h ouvrées.</p>
+    <div id="calendly-zone"></div>
+    <div class="slots" id="slots-zone"></div>
+    <form class="form form--2col" id="rdv-form" style="max-width:880px">
+      <p class="slot-picked full" id="slot-picked" style="display:none">Créneau choisi&nbsp;: <b></b></p>
+      <div class="field">
+        <label for="r-nom">Votre prénom et nom</label>
+        <input id="r-nom" type="text" placeholder="Camille Dupont">
+      </div>
+      <div class="field">
+        <label for="r-email">Votre email</label>
+        <input id="r-email" type="email" placeholder="vous@exemple.fr">
+      </div>
+      <div class="field">
+        <label for="r-format">Format du rendez-vous</label>
+        <select id="r-format">
+          <option value="visio">En visio (30 min, où que vous soyez)</option>
+          <option value="personne">En personne à Paris</option>
+        </select>
+        <p class="form__hint" id="r-format-note" style="margin-top:8px;display:none">Nous sommes une maison en ligne, sans boutique&nbsp;: le lieu exact se convient ensemble par email, au moment de la confirmation.</p>
+      </div>
+      <div class="field">
+        <label for="r-projet">Votre projet</label>
+        <select id="r-projet">
+          <option>Bague de fiançailles</option>
+          <option>Alliance(s)</option>
+          <option>Bijou cadeau (collier, boucles, bracelet…)</option>
+          <option>Diamant seul</option>
+          <option>Création entièrement sur-mesure</option>
+          <option>Je ne sais pas encore</option>
+        </select>
+      </div>
+      <div class="field" id="dispo-field">
+        <label for="r-dispo">Vos disponibilités</label>
+        <input id="r-dispo" type="text" placeholder="Ex. : en semaine après 18 h, ou samedi matin">
+      </div>
+      <div class="field full">
+        <label for="r-msg">Quelques mots sur votre idée (optionnel)</label>
+        <textarea id="r-msg" placeholder="L'occasion, le budget envisagé, une date à respecter…"></textarea>
+      </div>
+      <div class="full btn-row">
+        <button class="btn btn--solid" type="submit">Demander mon rendez-vous</button>
+        <a class="btn" data-whatsapp="Bonjour, je souhaite prendre un rendez-vous conseil en visio." href="#">Ou via WhatsApp</a>
+      </div>
+      <p class="form__hint full">Le bouton ouvre votre messagerie avec un email pré-rempli — le créneau n'est définitif qu'à réception de notre confirmation.</p>
+    </form>
+  </div>
+</section>
+
+<section class="section" id="inspirations">
+  <div class="wrap">
+    <span class="kicker reveal">Vos inspirations</span>
+    <h2 class="section-title reveal">Une photo vaut mieux qu'un long brief</h2>
+    <p class="section-sub reveal">Une bague repérée sur Instagram, la main de la personne concernée, un bijou de famille à réinterpréter, une courte vidéo qui montre la pièce sous plusieurs angles&nbsp;: envoyez-nous ce que vous avez. C'est ce qui nous fait gagner le plus de temps — et ce qui rend le premier rendez-vous vraiment utile.</p>
+    <div class="share-box reveal">
+      <h3 class="mt-0">Envoyer des photos ou des vidéos</h3>
+      <p>Aucune inscription, aucun compte à créer.</p>
+      <div class="btn-row">
+        <a class="btn btn--solid" id="inspi-mail" href="#">Par email, avec pièces jointes</a>
+        <a class="btn" data-whatsapp="Bonjour, je vous envoie des photos et vidéos d'inspiration pour mon projet Oneiro." href="#">Sur WhatsApp</a>
+      </div>
+      <p class="form__hint" style="margin-top:18px">Le bouton email ouvre un message pré-rempli&nbsp;: glissez-y vos fichiers avant de l'envoyer. Photos (JPG, PNG, HEIC) et vidéos (MP4, MOV) bienvenues. Au-delà de 20&nbsp;Mo, préférez WhatsApp ou un lien de partage (WeTransfer, Drive, iCloud).</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--cream">
+  <div class="wrap prose">
+    <span class="kicker reveal">Pour les discrets</span>
+    <h2 class="mt-0 reveal">La surprise est sacrée</h2>
+    <p class="reveal">Projet de demande en mariage&nbsp;? Nous savons travailler en mode confidentiel&nbsp;: échanges aux horaires qui vous arrangent, colis neutre, complicité pour la taille de doigt. Précisez-le simplement dans votre message.</p>
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Priorité : Calendly si activé > widget de créneaux (config.booking) > formulaire libre
+  const zone = document.getElementById("calendly-zone");
+  const slotsZone = document.getElementById("slots-zone");
+  const form = document.getElementById("rdv-form");
+  const pickedLine = document.getElementById("slot-picked");
+  const cal = ONEIRO_CONFIG.calendly;
+  const bk = ONEIRO_CONFIG.booking || {};
+  let picked = null;
+  let slotsActive = false;
+
+  const pad = n => String(n).padStart(2, "0");
+  const fmtDay = new Intl.DateTimeFormat("fr-FR", { weekday: "long", day: "numeric", month: "long" });
+  const fmtTime = d => pad(d.getHours()) + "h" + (d.getMinutes() ? pad(d.getMinutes()) : "");
+  const label = d => fmtDay.format(d) + " à " + fmtTime(d);
+
+  if (cal.enabled && cal.url) {
+    const sep = cal.url.includes("?") ? "&" : "?";
+    zone.innerHTML = `
+      <iframe src="${cal.url}${sep}hide_gdpr_banner=1&background_color=FAF8F4&text_color=17150F&primary_color=AE8C55"
+        title="Réserver un rendez-vous" style="width:100%;min-height:760px;border:1px solid var(--line);background:#fff" loading="lazy"></iframe>
+      <p class="form__hint" style="margin:18px 0 10px">Réservation immédiate, confirmation et lien visio envoyés par email.
+        <a href="#" id="show-form" style="border-bottom:1px solid var(--gold)">Vous préférez nous écrire ? Afficher le formulaire.</a></p>`;
+    form.style.display = "none";
+    document.getElementById("show-form").addEventListener("click", e => {
+      e.preventDefault();
+      form.style.display = "";
+      e.target.style.display = "none";
+    });
+  } else if (bk.enabled && bk.availability) {
+    // Génère les créneaux à partir des disponibilités récurrentes
+    const isoDay = d => d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
+    const mins = s => +s.slice(0, 2) * 60 + +s.slice(3, 5);
+    const step = bk.slotMinutes || 30;
+    const now = new Date();
+    const first = new Date(now.getTime() + (bk.leadHours || 24) * 3600e3);
+    const last = new Date(now.getTime() + (bk.weeksAhead || 3) * 7 * 864e5);
+    const days = [];
+    for (let d = new Date(first.getFullYear(), first.getMonth(), first.getDate()); d <= last; d.setDate(d.getDate() + 1)) {
+      const ranges = bk.availability[d.getDay()];
+      if (!ranges || (bk.exceptions || []).includes(isoDay(d))) continue;
+      const slots = [];
+      ranges.forEach(r => {
+        for (let t = mins(r[0]); t + step <= mins(r[1]); t += step) {
+          const dt = new Date(d.getFullYear(), d.getMonth(), d.getDate(), 0, t);
+          if (dt >= first) slots.push(dt);
+        }
+      });
+      if (slots.length) days.push({ day: new Date(d), slots });
+    }
+
+    if (days.length) {
+      slotsActive = true;
+      document.getElementById("dispo-field").style.display = "none";
+      slotsZone.innerHTML = days.map(g => {
+        const full = fmtDay.format(g.day);
+        const dayName = full.split(" ")[0];
+        return `
+        <div class="slot-day reveal">
+          <h3>${dayName}</h3>
+          <span class="slot-date">${full.slice(dayName.length + 1)}</span>
+          <div class="slot-list">${g.slots.map(s => `<button type="button" class="slot" data-t="${s.getTime()}">${fmtTime(s)}</button>`).join("")}</div>
+        </div>`;
+      }).join("");
+      O.observeReveals(slotsZone);
+      slotsZone.addEventListener("click", e => {
+        const btn = e.target.closest(".slot");
+        if (!btn) return;
+        slotsZone.querySelectorAll(".slot.on").forEach(b => b.classList.remove("on"));
+        btn.classList.add("on");
+        picked = new Date(+btn.dataset.t);
+        pickedLine.style.display = "";
+        pickedLine.querySelector("b").textContent = label(picked);
+      });
+    }
+  }
+
+  // Le lieu d'un rendez-vous en personne se cale par email : on le dit tout de suite.
+  const fmt = document.getElementById("r-format");
+  const fmtNote = document.getElementById("r-format-note");
+  fmt.addEventListener("change", () => {
+    fmtNote.style.display = fmt.value === "personne" ? "" : "none";
+  });
+
+  // Bloc inspirations : email pre-rempli, pret a recevoir les pieces jointes
+  document.getElementById("inspi-mail").href = O.mailto(
+    "Mes inspirations — projet Oneiro",
+    "Bonjour,\n\nVoici quelques photos et vidéos qui me servent d'inspiration pour mon projet.\n\n" +
+    "N'oubliez pas de joindre vos fichiers à cet email avant de l'envoyer.\n\n" +
+    "- Mon prénom et nom : \n" +
+    "- Ce que j'aime dans ces images : \n" +
+    "- Mon projet en deux mots : \n");
+
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    if (slotsActive && !picked) {
+      pickedLine.style.display = "";
+      pickedLine.querySelector("b").textContent = "choisissez d'abord un horaire ci-dessus";
+      slotsZone.scrollIntoView({ behavior: "smooth", block: "center" });
+      return;
+    }
+    const g = id => document.getElementById(id).value;
+    const dispo = picked ? label(picked) : (g("r-dispo") || "-");
+    const enVisio = g("r-format") === "visio";
+    const format = enVisio ? "En visio" : "En personne à Paris (lieu à convenir ensemble)";
+    const body =
+      "Bonjour,\n\nJe souhaite réserver un rendez-vous conseil " +
+      (enVisio ? "en visio" : "en personne à Paris") + ".\n\n" +
+      "- Nom : " + g("r-nom") + "\n" +
+      "- Email : " + g("r-email") + "\n" +
+      "- Format : " + format + "\n" +
+      "- Projet : " + g("r-projet") + "\n" +
+      "- Créneau souhaité : " + dispo + "\n\n" +
+      "Mon idée : " + (g("r-msg") || "-") + "\n\n" +
+      "(Je peux joindre des photos ou vidéos d'inspiration à cet email.)\n";
+    location.href = O.mailto("Demande de rendez-vous conseil — " + (enVisio ? "visio" : "Paris")
+      + (picked ? " — " + label(picked) : ""), body);
+  });
+});
+</script>

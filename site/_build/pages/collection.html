@@ -1,0 +1,57 @@
+<section class="page-head section--cream">
+  <div class="wrap">
+    <span class="kicker">La Maison — Collection</span>
+    <h1>La collection signature</h1>
+    <p class="section-sub">Des créations en or 18&nbsp;carats serties de diamants certifiés, dessinées à Paris et façonnées en France. Chaque pièce existe en diamant naturel ou de laboratoire — et chaque pièce peut être adaptée à vos envies.</p>
+    <div class="filters" id="filters">
+      <button data-f="all" class="on">Tout</button>
+      <button data-f="bagues">Bagues</button>
+      <button data-f="boucles-oreilles">Boucles d'oreilles</button>
+      <button data-f="colliers">Colliers</button>
+      <button data-f="bracelets">Bracelets</button>
+      <button data-f="_custom">Personnalisables</button>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="grid" id="catalog"></div>
+    <div class="notice reveal" style="max-width:820px">
+      <b>Les prix affichés sont des prix de départ.</b> Pour les modèles « pierre centrale à sélectionner séparément », le prix final dépend du diamant choisi (carat, couleur, pureté, naturel ou laboratoire). Un devis précis vous est remis avant toute commande — <a class="textlink" href="rendez-vous.html">parlez-nous de votre projet</a>.
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <h2 class="reveal">Un modèle vous plaît, mais pas tel quel&nbsp;?</h2>
+  <p class="reveal">Autre or, autre pierre, autres proportions&nbsp;: la collection n'est qu'un point de départ. C'est le principe de la Maison.</p>
+  <div class="btn-row reveal">
+    <a class="btn btn--gold" href="sur-mesure.html">Découvrir le sur-mesure</a>
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const grid = document.getElementById("catalog");
+  const order = { "bagues": 1, "boucles-oreilles": 2, "colliers": 3, "bracelets": 4 };
+  const all = [...ONEIRO_PRODUCTS].sort((a, b) => (order[a.category] || 9) - (order[b.category] || 9));
+
+  function show(f) {
+    let list = all;
+    if (f === "_custom") list = all.filter(p => p.customizable);
+    else if (f !== "all") list = all.filter(p => p.category === f);
+    O.renderCards(grid, list);
+  }
+
+  document.querySelectorAll("#filters button").forEach(b => {
+    b.addEventListener("click", () => {
+      document.querySelectorAll("#filters button").forEach(x => x.classList.remove("on"));
+      b.classList.add("on");
+      show(b.dataset.f);
+    });
+  });
+
+  show("all");
+});
+</script>

@@ -1,0 +1,23 @@
+# Liste blanche : tout est ignoré à la racine, sauf ce qui est réautorisé ci-dessous.
+# Ça évite de publier par erreur les documents internes, les scripts de
+# déploiement, le modèle de prix (pricing/) et les archives.
+/*
+!/.gitignore
+!/README.md
+!/GEMINI.md
+!/site/
+!/deploy/
+!/favicon/
+
+# Dans les dossiers publiés
+site/_source/
+*.bak
+*.bak-*
+*.bak*
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db

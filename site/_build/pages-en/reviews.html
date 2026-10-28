@@ -1,0 +1,78 @@
+<section class="page-head section--cream">
+  <div class="wrap">
+    <span class="kicker">Client reviews</span>
+    <h1>What the people who trusted us have to say</h1>
+    <p class="section-sub">Every review published here comes from a real client, after they received their piece. We remove none of them: reservations are as useful as compliments.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div id="avis-summary"></div>
+    <div class="reviews" id="avis-zone"></div>
+    <div id="avis-empty" style="display:none">
+      <div class="notice" style="max-width:760px;margin-top:0">
+        <b>The first reviews are on their way.</b> The house is young: our clients are receiving their pieces and we ask every one of them for their feedback. It will be published here as written. In the meantime, <a href="book-appointment.html">let's talk about your project by video</a> — and judge for yourself.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--cream" id="leave-a-review">
+  <div class="wrap prose">
+    <span class="kicker reveal">Already a client?</span>
+    <h2 class="mt-0 reveal">Share your experience</h2>
+    <p class="reveal">Your feedback helps the next person decide — and helps us improve. A few lines are enough.</p>
+    <div class="btn-row reveal" style="margin-top:26px">
+      <a class="btn btn--solid" id="avis-cta" href="#">Leave a review</a>
+      <a class="btn" data-whatsapp="Hello, I would like to leave a review about my order." href="#">Send it on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <h2 class="reveal">A project in mind?</h2>
+  <p class="reveal">A 30 minute video appointment, free and with no obligation.</p>
+  <div class="btn-row reveal"><a class="btn btn--gold" href="book-appointment.html">Book an appointment</a></div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const list = Array.isArray(ONEIRO_CONFIG.reviews) ? ONEIRO_CONFIG.reviews : [];
+  const zone = document.getElementById("avis-zone");
+  const summary = document.getElementById("avis-summary");
+
+  if (!list.length) {
+    document.getElementById("avis-empty").style.display = "";
+  } else {
+    const rated = list.filter(r => r.rating);
+    if (rated.length) {
+      const avg = rated.reduce((a, r) => a + r.rating, 0) / rated.length;
+      summary.innerHTML = `
+        <div class="rating-summary">
+          <span class="rating-summary__score">${avg.toFixed(1)}</span>
+          <span class="review__stars" aria-hidden="true">${O.stars(avg)}</span>
+          <span class="rating-summary__count">out of 5 — ${list.length} client review${list.length > 1 ? "s" : ""}</span>
+        </div>`;
+    }
+    zone.innerHTML = list.map(r => O.reviewCard(r)).join("");
+    O.observeReveals(zone);
+  }
+
+  // Button: link to the public review profile if configured, otherwise email
+  const cta = document.getElementById("avis-cta");
+  if (ONEIRO_CONFIG.reviewUrl) {
+    cta.href = ONEIRO_CONFIG.reviewUrl;
+    cta.target = "_blank";
+    cta.rel = "noopener";
+  } else {
+    cta.href = O.mailto("My review of my Oneiro order",
+      "Hello,\n\nHere is my feedback on my order:\n\n" +
+      "- Piece received: \n" +
+      "- My rating (out of 5): \n" +
+      "- My review: \n\n" +
+      "- First name and surname initial to publish: \n\n" +
+      "You may publish this review on your website.\n");
+  }
+});
+</script>

@@ -1,0 +1,6 @@
+Déposez ici vos vidéos de l'atelier (format .mp4, idéalement < 50 Mo chacune,
+1080p suffit) et, si vous voulez une image d'aperçu avant lecture, une .jpg
+du même nom (ex. atelier-1.mp4 + atelier-1.jpg).
+
+Puis déclarez-les dans site/assets/js/config.js, bloc "atelierVideos".
+La section « L'atelier en images » apparaîtra automatiquement sur la page À propos.

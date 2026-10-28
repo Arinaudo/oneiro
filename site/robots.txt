@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /_build/
+Disallow: /_source/
+Disallow: /produit.html
+Disallow: /selection.html
+Disallow: /en/product.html
+Disallow: /en/wishlist.html
+
+Sitemap: https://oneiroparis.com/sitemap.xml

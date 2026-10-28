@@ -1,0 +1,101 @@
+<section class="page-head section--cream">
+  <div class="wrap">
+    <span class="kicker" id="sel-kicker">Ma sélection</span>
+    <h1 id="sel-title">Les pièces que vous avez retenues</h1>
+    <p class="section-sub" id="sel-sub">Gardez-les sous la main, comparez à tête reposée — ou envoyez cette page à la personne concernée. Le lien contient votre sélection, aucun compte n'est nécessaire.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="grid" id="sel-grid"></div>
+
+    <div id="sel-empty" style="display:none">
+      <div class="notice" style="max-width:760px;margin-top:0">
+        <b>Votre sélection est vide.</b> Parcourez la collection et touchez le cœur sur les pièces qui vous plaisent&nbsp;: elles se retrouveront ici, prêtes à être comparées ou partagées.
+      </div>
+      <div class="btn-row" style="margin-top:30px">
+        <a class="btn btn--solid" href="collection.html">Parcourir la collection</a>
+      </div>
+    </div>
+
+    <div id="sel-actions" style="display:none;margin-top:48px">
+      <div class="share-box">
+        <h3 class="mt-0">Partager cette sélection</h3>
+        <p>Un lien unique qui rouvre exactement ces pièces, sur n'importe quel appareil.</p>
+        <div class="share-field">
+          <input type="text" id="share-url" readonly aria-label="Lien de votre sélection">
+          <button type="button" class="btn btn--solid" id="share-copy">Copier</button>
+        </div>
+        <div class="btn-row" style="margin-top:18px">
+          <a class="btn" id="share-mail" href="#">Envoyer par email</a>
+          <a class="btn" id="share-wa" data-whatsapp="" href="#">Envoyer sur WhatsApp</a>
+        </div>
+        <p class="share-clear"><button type="button" id="sel-clear">Vider ma sélection</button></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" id="sel-cta" style="display:none">
+  <h2 class="reveal">Envie d'en parler&nbsp;?</h2>
+  <p class="reveal">Montrez-nous votre sélection en visio&nbsp;: nous vous dirons franchement ce qui vous conviendrait le mieux, et à quel budget.</p>
+  <div class="btn-row reveal"><a class="btn btn--gold" href="rendez-vous.html">Prendre rendez-vous</a></div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const grid = document.getElementById("sel-grid");
+  const shared = O.wish.shared();          // sélection reçue par lien
+  const handles = shared || O.wish.get();  // sinon la sienne
+  const items = handles.map(h => O.product(h)).filter(Boolean);
+
+  if (shared) {
+    document.getElementById("sel-kicker").textContent = "Une sélection partagée";
+    document.getElementById("sel-title").textContent = "Voici les pièces qui ont été retenues pour vous";
+    document.getElementById("sel-sub").textContent =
+      "Quelqu'un a rassemblé ces créations à votre intention. Ajoutez celles qui vous plaisent à votre propre sélection, ou parlons-en de vive voix.";
+  }
+
+  if (!items.length) {
+    document.getElementById("sel-empty").style.display = "";
+    return;
+  }
+
+  O.renderCards(grid, items);
+  document.getElementById("sel-cta").style.display = "";
+
+  // Actions de partage : uniquement sur sa propre sélection
+  if (!shared) {
+    document.getElementById("sel-actions").style.display = "";
+    const url = O.wish.shareUrl();
+    document.getElementById("share-url").value = url;
+
+    const titres = items.map(p => "- " + O.title(p) + " (" + O.fmt(p.priceNatural || p.priceFrom) + ")").join("\n");
+    document.getElementById("share-mail").href =
+      "mailto:?subject=" + encodeURIComponent("Ma sélection Oneiro Paris") +
+      "&body=" + encodeURIComponent("Voici les pièces que j'ai retenues chez Oneiro Paris :\n\n" + titres + "\n\nÀ voir ici : " + url + "\n");
+
+    const wa = document.getElementById("share-wa");
+    wa.href = "https://wa.me/?text=" + encodeURIComponent("Ma sélection Oneiro Paris : " + url);
+    wa.removeAttribute("data-whatsapp");
+    wa.target = "_blank"; wa.rel = "noopener";
+
+    document.getElementById("share-copy").addEventListener("click", async e => {
+      const input = document.getElementById("share-url");
+      try {
+        await navigator.clipboard.writeText(input.value);
+      } catch (err) {
+        input.select(); document.execCommand("copy");
+      }
+      e.target.textContent = "Lien copié";
+      setTimeout(() => e.target.textContent = "Copier", 2200);
+    });
+
+    document.getElementById("sel-clear").addEventListener("click", () => {
+      O.wish.set([]);
+      location.reload();
+    });
+  }
+});
+</script>

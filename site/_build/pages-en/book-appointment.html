@@ -1,0 +1,228 @@
+<section class="page-head section--cream">
+  <div class="wrap">
+    <span class="kicker">Advice appointment</span>
+    <h1>Thirty minutes to give your project its shape</h1>
+    <p class="section-sub">An appointment by video or in person in Paris, free and with no obligation, with the person who will follow your project from start to finish. No sales script: your questions, our straight answers — including "this model isn't right for you".</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <span class="kicker reveal">In practice</span>
+    <h2 class="section-title reveal">What happens during (and after) the appointment</h2>
+    <div class="steps" style="grid-template-columns:repeat(3,1fr)">
+      <div class="step reveal">
+        <h3>We listen</h3>
+        <p>Your project, the occasion, the budget, the taste of the person who will wear the piece. Send us your inspiration photographs or videos beforehand if you have any — or come empty-handed, that works too.</p>
+      </div>
+      <div class="step reveal">
+        <h3>We explain</h3>
+        <p>The 4Cs without jargon, natural versus lab-grown with the numbers in front of you, the traps to avoid, and an honest price range for your brief.</p>
+      </div>
+      <div class="step reveal">
+        <h3>We propose</h3>
+        <p>Within 48 hours you receive 2 or 3 concrete directions by email: shortlisted certified stones, design ideas, indicative quotes. You decide — or you don't. No insistent follow-ups.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--cream" id="book">
+  <div class="wrap">
+    <span class="kicker reveal">Book</span>
+    <h2 class="section-title reveal">Choose your slot</h2>
+    <p class="section-sub reveal">Here are our next availabilities. Choose the format — by video or in person in Paris — then the slot that suits you: we confirm by email within 24&nbsp;working hours.</p>
+    <div id="calendly-zone"></div>
+    <div class="slots" id="slots-zone"></div>
+    <form class="form form--2col" id="rdv-form" style="max-width:880px">
+      <p class="slot-picked full" id="slot-picked" style="display:none">Slot chosen: <b></b></p>
+      <div class="field">
+        <label for="r-nom">Your first and last name</label>
+        <input id="r-nom" type="text" placeholder="Camille Dupont">
+      </div>
+      <div class="field">
+        <label for="r-email">Your email</label>
+        <input id="r-email" type="email" placeholder="you@example.com">
+      </div>
+      <div class="field">
+        <label for="r-format">Appointment format</label>
+        <select id="r-format">
+          <option value="visio">By video (30 min, wherever you are)</option>
+          <option value="personne">In person in Paris</option>
+        </select>
+        <p class="form__hint" id="r-format-note" style="margin-top:8px;display:none">We are an online house, with no boutique: the exact place is agreed together by email, when we confirm.</p>
+      </div>
+      <div class="field">
+        <label for="r-projet">Your project</label>
+        <select id="r-projet">
+          <option>Engagement ring</option>
+          <option>Wedding band(s)</option>
+          <option>A gift (necklace, earrings, bracelet…)</option>
+          <option>A loose diamond</option>
+          <option>A fully bespoke creation</option>
+          <option>I don't know yet</option>
+        </select>
+      </div>
+      <div class="field" id="dispo-field">
+        <label for="r-dispo">When you are available</label>
+        <input id="r-dispo" type="text" placeholder="e.g. weekdays after 6pm, or Saturday morning">
+      </div>
+      <div class="field full">
+        <label for="r-msg">A few words about your idea (optional)</label>
+        <textarea id="r-msg" placeholder="The occasion, the budget you have in mind, a date to meet…"></textarea>
+      </div>
+      <div class="full btn-row">
+        <button class="btn btn--solid" type="submit">Request my appointment</button>
+        <a class="btn" data-whatsapp="Hello, I would like to book a video advice appointment." href="#">Or on WhatsApp</a>
+      </div>
+      <p class="form__hint full">The button opens your email client with a pre-filled message — the slot is only final once you receive our confirmation.</p>
+    </form>
+  </div>
+</section>
+
+<section class="section" id="inspirations">
+  <div class="wrap">
+    <span class="kicker reveal">Your inspirations</span>
+    <h2 class="section-title reveal">A photograph beats a long brief</h2>
+    <p class="section-sub reveal">A ring spotted on Instagram, the hand of the person concerned, a family piece to reinterpret, a short video showing a design from several angles: send us whatever you have. It is what saves us the most time — and what makes the first appointment genuinely useful.</p>
+    <div class="share-box reveal">
+      <h3 class="mt-0">Send photographs or videos</h3>
+      <p>No sign-up, no account to create.</p>
+      <div class="btn-row">
+        <a class="btn btn--solid" id="inspi-mail" href="#">By email, with attachments</a>
+        <a class="btn" data-whatsapp="Hello, I am sending you some inspiration photographs and videos for my Oneiro project." href="#">On WhatsApp</a>
+      </div>
+      <p class="form__hint" style="margin-top:18px">The email button opens a pre-filled message: drop your files into it before sending. Photographs (JPG, PNG, HEIC) and videos (MP4, MOV) both welcome. Over 20&nbsp;MB, prefer WhatsApp or a share link (WeTransfer, Drive, iCloud).</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--cream">
+  <div class="wrap prose">
+    <span class="kicker reveal">For the discreet</span>
+    <h2 class="mt-0 reveal">The surprise is sacred</h2>
+    <p class="reveal">Planning a proposal? We know how to work confidentially: exchanges at the hours that suit you, a neutral parcel, a quiet way to get the ring size. Just say so in your message.</p>
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Priority: Calendly if enabled > slot widget (config.booking) > free-form request
+  const zone = document.getElementById("calendly-zone");
+  const slotsZone = document.getElementById("slots-zone");
+  const form = document.getElementById("rdv-form");
+  const pickedLine = document.getElementById("slot-picked");
+  const cal = ONEIRO_CONFIG.calendly;
+  const bk = ONEIRO_CONFIG.booking || {};
+  let picked = null;
+  let slotsActive = false;
+
+  const pad = n => String(n).padStart(2, "0");
+  const fmtDay = new Intl.DateTimeFormat("en-GB", { weekday: "long", day: "numeric", month: "long" });
+  const fmtTime = d => new Intl.DateTimeFormat("en-GB", { hour: "2-digit", minute: "2-digit", hour12: false }).format(d);
+  const label = d => fmtDay.format(d) + " at " + fmtTime(d);
+
+  if (cal.enabled && cal.url) {
+    const sep = cal.url.includes("?") ? "&" : "?";
+    zone.innerHTML = `
+      <iframe src="${cal.url}${sep}hide_gdpr_banner=1&background_color=FAF8F4&text_color=17150F&primary_color=AE8C55"
+        title="Book an appointment" style="width:100%;min-height:760px;border:1px solid var(--line);background:#fff" loading="lazy"></iframe>
+      <p class="form__hint" style="margin:18px 0 10px">Instant booking, with the confirmation and video link sent by email.
+        <a href="#" id="show-form" style="border-bottom:1px solid var(--gold)">Prefer to write to us? Show the form.</a></p>`;
+    form.style.display = "none";
+    document.getElementById("show-form").addEventListener("click", e => {
+      e.preventDefault();
+      form.style.display = "";
+      e.target.style.display = "none";
+    });
+  } else if (bk.enabled && bk.availability) {
+    // Builds the slots from the recurring availabilities
+    const isoDay = d => d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
+    const mins = s => +s.slice(0, 2) * 60 + +s.slice(3, 5);
+    const step = bk.slotMinutes || 30;
+    const now = new Date();
+    const first = new Date(now.getTime() + (bk.leadHours || 24) * 3600e3);
+    const last = new Date(now.getTime() + (bk.weeksAhead || 3) * 7 * 864e5);
+    const days = [];
+    for (let d = new Date(first.getFullYear(), first.getMonth(), first.getDate()); d <= last; d.setDate(d.getDate() + 1)) {
+      const ranges = bk.availability[d.getDay()];
+      if (!ranges || (bk.exceptions || []).includes(isoDay(d))) continue;
+      const slots = [];
+      ranges.forEach(r => {
+        for (let t = mins(r[0]); t + step <= mins(r[1]); t += step) {
+          const dt = new Date(d.getFullYear(), d.getMonth(), d.getDate(), 0, t);
+          if (dt >= first) slots.push(dt);
+        }
+      });
+      if (slots.length) days.push({ day: new Date(d), slots });
+    }
+
+    if (days.length) {
+      slotsActive = true;
+      document.getElementById("dispo-field").style.display = "none";
+      slotsZone.innerHTML = days.map(g => {
+        const dayName = new Intl.DateTimeFormat("en-GB", { weekday: "long" }).format(g.day);
+        const rest = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "long" }).format(g.day);
+        return `
+        <div class="slot-day reveal">
+          <h3>${dayName}</h3>
+          <span class="slot-date">${rest}</span>
+          <div class="slot-list">${g.slots.map(s => `<button type="button" class="slot" data-t="${s.getTime()}">${fmtTime(s)}</button>`).join("")}</div>
+        </div>`;
+      }).join("");
+      O.observeReveals(slotsZone);
+      slotsZone.addEventListener("click", e => {
+        const btn = e.target.closest(".slot");
+        if (!btn) return;
+        slotsZone.querySelectorAll(".slot.on").forEach(b => b.classList.remove("on"));
+        btn.classList.add("on");
+        picked = new Date(+btn.dataset.t);
+        pickedLine.style.display = "";
+        pickedLine.querySelector("b").textContent = label(picked);
+      });
+    }
+  }
+
+  // The place for an in-person appointment is agreed by email: say so straight away.
+  const fmt = document.getElementById("r-format");
+  const fmtNote = document.getElementById("r-format-note");
+  fmt.addEventListener("change", () => {
+    fmtNote.style.display = fmt.value === "personne" ? "" : "none";
+  });
+
+  // Inspiration block: a pre-filled email, ready for the attachments
+  document.getElementById("inspi-mail").href = O.mailto(
+    "My inspirations — Oneiro project",
+    "Hello,\n\nHere are a few photographs and videos I am using as inspiration for my project.\n\n" +
+    "Remember to attach your files to this email before sending it.\n\n" +
+    "- My first and last name: \n" +
+    "- What I like in these images: \n" +
+    "- My project in two words: \n");
+
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    if (slotsActive && !picked) {
+      pickedLine.style.display = "";
+      pickedLine.querySelector("b").textContent = "please choose a time above first";
+      slotsZone.scrollIntoView({ behavior: "smooth", block: "center" });
+      return;
+    }
+    const g = id => document.getElementById(id).value;
+    const dispo = picked ? label(picked) : (g("r-dispo") || "-");
+    const enVisio = g("r-format") === "visio";
+    const format = enVisio ? "By video" : "In person in Paris (place to be agreed together)";
+    const body =
+      "Hello,\n\nI would like to book an advice appointment " +
+      (enVisio ? "by video" : "in person in Paris") + ".\n\n" +
+      "- Name: " + g("r-nom") + "\n" +
+      "- Email: " + g("r-email") + "\n" +
+      "- Format: " + format + "\n" +
+      "- Project: " + g("r-projet") + "\n" +
+      "- Preferred slot: " + dispo + "\n\n" +
+      "My idea: " + (g("r-msg") || "-") + "\n\n" +
+      "(I can attach inspiration photographs or videos to this email.)\n";
+    location.href = O.mailto("Advice appointment request — " + (enVisio ? "video" : "Paris")
+      + (picked ? " — " + label(picked) : ""), body);
+  });
+});
+</script>

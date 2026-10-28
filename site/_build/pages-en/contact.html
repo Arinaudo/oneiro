@@ -1,0 +1,103 @@
+<section class="page-head section--cream">
+  <div class="wrap">
+    <span class="kicker">Contact</span>
+    <h1>A real person answers you</h1>
+    <p class="section-sub">A question, a project, an order to follow up or simple curiosity — write to us. An answer within 24&nbsp;working hours, from someone who knows your file.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="pillars">
+      <div class="pillar reveal">
+        <h3 class="mt-0">By email</h3>
+        <p><a class="textlink" data-email href="#">contact@oneiroparis.com</a><br><br>The simplest route for detailed enquiries — attach your inspiration photographs and videos, they are always welcome.</p>
+      </div>
+      <div class="pillar reveal">
+        <h3 class="mt-0">On WhatsApp</h3>
+        <p><a class="textlink" data-whatsapp="Hello, I have a question for the Oneiro house." href="#">Message us on WhatsApp</a><br><br>For quick exchanges, live photographs and progress updates.</p>
+      </div>
+      <div class="pillar reveal">
+        <h3 class="mt-0">By video or in Paris</h3>
+        <p><a class="textlink" href="book-appointment.html">Book an advice session</a><br><br>30 free minutes to talk about your project, by video or in person in Paris.</p>
+      </div>
+    </div>
+
+    <form class="form form--2col" id="contact-form" style="max-width:880px;margin-top:64px">
+      <div class="field">
+        <label for="c-nom">Your first and last name</label>
+        <input id="c-nom" type="text" placeholder="Camille Dupont">
+      </div>
+      <div class="field">
+        <label for="c-email">Your email</label>
+        <input id="c-email" type="email" placeholder="you@example.com">
+      </div>
+      <div class="field full">
+        <label for="c-sujet">Subject</label>
+        <select id="c-sujet">
+          <option>Question about a creation</option>
+          <option>Bespoke project</option>
+          <option>Diamond search</option>
+          <option>Order follow-up</option>
+          <option>Resizing / care / repair</option>
+          <option>Press &amp; partnerships</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="field full">
+        <label for="c-msg">Your message</label>
+        <textarea id="c-msg" placeholder="Tell us everything…"></textarea>
+      </div>
+      <div class="full btn-row">
+        <button class="btn btn--solid" type="submit">Send</button>
+      </div>
+      <p class="form__hint full">The button opens your email client with a pre-filled message — nothing is sent without your approval.</p>
+    </form>
+  </div>
+</section>
+
+<section class="section section--cream" id="inspirations">
+  <div class="wrap">
+    <span class="kicker reveal">Your inspirations</span>
+    <h2 class="section-title reveal">Send us photographs or videos</h2>
+    <p class="section-sub reveal">A ring you spotted somewhere, the hand of the person concerned, a family piece to reinterpret, a video showing a design from several angles: it usually says more than a long description.</p>
+    <div class="share-box reveal">
+      <h3 class="mt-0">Two ways to get them to us</h3>
+      <p>No sign-up, no account to create.</p>
+      <div class="btn-row">
+        <a class="btn btn--solid" id="inspi-mail" href="#">By email, with attachments</a>
+        <a class="btn" data-whatsapp="Hello, I am sending you some inspiration photographs and videos for my Oneiro project." href="#">On WhatsApp</a>
+      </div>
+      <p class="form__hint" style="margin-top:18px">The email button opens a pre-filled message: drop your files into it before sending. Photographs (JPG, PNG, HEIC) and videos (MP4, MOV) both welcome. Over 20&nbsp;MB, prefer WhatsApp or a share link (WeTransfer, Drive, iCloud).</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap prose">
+    <span class="kicker reveal">The House</span>
+    <h2 class="mt-0 reveal">Where to find us</h2>
+    <p class="reveal">Oneiro is an entirely online house — our registered office is at 3 rue de la Faisanderie, 75016 Paris. We do not receive unannounced visits, but everything a boutique does, we do remotely: pieces presented by video, photographs and films on request, personal guidance throughout.</p>
+    <p class="reveal">Follow the creations and life in the workshop on Instagram: <a class="textlink" href="https://www.instagram.com/oneiro_paris" target="_blank" rel="noopener">@oneiro_paris</a></p>
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Inspiration block: a pre-filled email, ready for the attachments
+  document.getElementById("inspi-mail").href = O.mailto(
+    "My inspirations — Oneiro project",
+    "Hello,\n\nHere are a few photographs and videos I am using as inspiration for my project.\n\n" +
+    "Remember to attach your files to this email before sending it.\n\n" +
+    "- My first and last name: \n" +
+    "- What I like in these images: \n" +
+    "- My project in two words: \n");
+
+  document.getElementById("contact-form").addEventListener("submit", e => {
+    e.preventDefault();
+    const g = id => document.getElementById(id).value;
+    const body = "Hello,\n\n" + (g("c-msg") || "") + "\n\n— " + g("c-nom") + " (" + g("c-email") + ")";
+    location.href = O.mailto("[Website] " + g("c-sujet"), body);
+  });
+});
+</script>

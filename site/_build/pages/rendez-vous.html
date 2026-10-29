@@ -107,7 +107,7 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  // Priorité : Calendly si activé > widget de créneaux (config.booking) > formulaire libre
+  // Priorité : réservation en ligne (Calendly, Cal.com...) si une URL est renseignée > widget de créneaux (config.booking) > formulaire libre
   const zone = document.getElementById("calendly-zone");
   const slotsZone = document.getElementById("slots-zone");
   const form = document.getElementById("rdv-form");
@@ -122,12 +122,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const fmtTime = d => pad(d.getHours()) + "h" + (d.getMinutes() ? pad(d.getMinutes()) : "");
   const label = d => fmtDay.format(d) + " à " + fmtTime(d);
 
-  if (cal.enabled && cal.url) {
-    const sep = cal.url.includes("?") ? "&" : "?";
+  if (cal.url && cal.enabled !== false) {
+    // Le fournisseur se devine à l'URL : seuls ses paramètres d'affichage sont ajoutés.
+    let src = cal.url;
+    const sep = src.includes("?") ? "&" : "?";
+    if (/calendly\.com/.test(src)) src += sep + "hide_gdpr_banner=1&background_color=FAF8F4&text_color=17150F&primary_color=AE8C55";
+    else if (/cal\.com/.test(src)) src += sep + "embed=true&layout=month_view&theme=light";
+    const lead = zone.closest("section").querySelector(".section-sub");
+    if (lead) lead.textContent = "Choisissez le jour et l'heure : la réservation est immédiate, avec confirmation et lien visio envoyés par email. Aucun échange de messages nécessaire.";
     zone.innerHTML = `
-      <iframe src="${cal.url}${sep}hide_gdpr_banner=1&background_color=FAF8F4&text_color=17150F&primary_color=AE8C55"
+      <iframe src="${src}"
         title="Réserver un rendez-vous" style="width:100%;min-height:760px;border:1px solid var(--line);background:#fff" loading="lazy"></iframe>
-      <p class="form__hint" style="margin:18px 0 10px">Réservation immédiate, confirmation et lien visio envoyés par email.
+      <p class="form__hint" style="margin:18px 0 10px">Vous recevez la confirmation par email, avec la possibilité de modifier ou d'annuler.
         <a href="#" id="show-form" style="border-bottom:1px solid var(--gold)">Vous préférez nous écrire ? Afficher le formulaire.</a></p>`;
     form.style.display = "none";
     document.getElementById("show-form").addEventListener("click", e => {

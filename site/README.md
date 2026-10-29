@@ -14,7 +14,7 @@ Le français vit à la racine, l'anglais sous `en/`.
   Oneiro Diamants (transactionnel, page dédiée à l'univers sombre distinct).
 - **Hero refait** : titre fort, promesse claire, double CTA, barre de réassurance.
 - **Confiance renforcée** : certificats GIA/IGI mis en avant, page Garanties
-  complète, Klarna 3× visible sur chaque fiche, mentions légales étoffées,
+  complète, mentions légales étoffées,
   plus de Gmail public, plus de « propulsé par Shopify », plus de prix à 0 €.
 - **Données conservées** : les 22 produits (prix, variantes naturel/labo, photos),
   délais 2-7 semaines, politiques de retour/livraison réelles, SIRET.

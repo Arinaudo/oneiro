@@ -280,8 +280,7 @@ PSTR = {
     "fr": {
         "crumbs_aria": "Fil d'Ariane", "home": "Accueil", "collection": "Collection",
         "from": "À partir de ",
-        "lab": lambda p: f'ou <b>{p}</b> en diamant de laboratoire — et paiement en 3× avec Klarna',
-        "klarna": "Paiement en <b>3×</b> possible avec Klarna",
+        "lab": lambda p: f'ou <b>{p}</b> en diamant de laboratoire',
         "reserve": "Réserver cette pièce", "video": "Voir cette pièce en visio",
         "note": "Or 18 carats — diamants certifiés GIA/IGI — façonné en France — livraison offerte — délai 2 à 7 semaines.",
         "note_link": "Toutes nos garanties",
@@ -303,8 +302,7 @@ PSTR = {
     "en": {
         "crumbs_aria": "Breadcrumb", "home": "Home", "collection": "Collection",
         "from": "From ",
-        "lab": lambda p: f'or <b>{p}</b> with a lab-grown diamond — and payment in 3 with Klarna',
-        "klarna": "Payment in <b>3 instalments</b> available with Klarna",
+        "lab": lambda p: f'or <b>{p}</b> with a lab-grown diamond',
         "reserve": "Reserve this piece", "video": "See this piece by video",
         "note": "18 carat gold — GIA/IGI certified diamonds — made in France — free delivery — ready in 2 to 7 weeks.",
         "note_link": "All our guarantees",
@@ -370,8 +368,6 @@ FAQ = {
          "Les envois sont suivis et remis contre signature. En cas de problème de transport, nous gérons le dossier avec le transporteur."),
         ("Faites-vous les alliances assorties ?",
          "Oui. Parlez-en dès la bague de fiançailles pour penser l'empilage : nous gardons les plans de votre pièce."),
-        ("Proposez-vous un paiement en plusieurs fois ?",
-         "Oui, en 3 fois via Klarna, en plus du paiement comptant par carte, PayPal, Apple Pay ou virement."),
         ("Livrez-vous à l'étranger ?",
          "Oui, la livraison est offerte à l'international. Hors UE, les droits et taxes d'importation locaux restent à votre charge."),
     ],
@@ -384,8 +380,6 @@ FAQ = {
          "Shipments are tracked and handed over against signature. If there is a transport problem, we handle the claim with the carrier."),
         ("Do you make matching wedding bands?",
          "Yes. Mention it as early as the engagement ring so we can think about the stack: we keep the files for your piece."),
-        ("Do you offer payment in instalments?",
-         "Yes, in 3 instalments via Klarna, alongside payment in full by card, PayPal, Apple Pay or bank transfer."),
         ("Do you deliver abroad?",
          "Yes, delivery is free internationally. Outside the EU, local import duties and taxes are payable by you."),
     ],
@@ -937,9 +931,9 @@ for lang in ("fr", "en"):
         multi = len(set(prices)) > 1
         price_line = (S["from"] if multi else "") + fmt_money(p.get("priceNatural") or p["priceFrom"], lang)
         if p.get("priceLab") and p.get("priceNatural") != p.get("priceLab"):
-            lab_line = f'<div class="pinfo__klarna">{S["lab"](fmt_money(p["priceLab"], lang))}</div>'
+            lab_line = f'<div class="pinfo__sub">{S["lab"](fmt_money(p["priceLab"], lang))}</div>'
         else:
-            lab_line = f'<div class="pinfo__klarna">{S["klarna"]}</div>'
+            lab_line = ""
         gallery = "".join(
             f'<div class="gallery__main" style="margin-bottom:12px"><img src="{e(src)}{"&" if "?" in src else "?"}width=1100" '
             f'alt="{e(title_p)} — {e(cat)} Oneiro Paris" loading="{"eager" if i == 0 else "lazy"}"></div>'

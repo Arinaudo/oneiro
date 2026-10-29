@@ -82,12 +82,21 @@ const ONEIRO_CONFIG = {
     exceptions: [],    // ex. ["2026-08-15", "2026-08-22"]
   },
 
-  // --- Calendly (prise de rendez-vous visio) --------------------------------
-  // TODO: créer un compte Calendly (gratuit) et coller l'URL de l'événement
-  // (ex: "https://calendly.com/oneiroparis/conseil-30min").
-  // Laisser vide => le widget de créneaux (booking) prend le relais.
+  // --- Réservation en ligne (Calendly, Cal.com ou équivalent) ---------------
+  // Les visiteurs choisissent un créneau directement, sans envoyer d'email.
+  // Marche à suivre :
+  //   1. créer un compte gratuit sur calendly.com ou cal.com
+  //   2. définir un événement "Rendez-vous conseil" de 30 min, brancher Google
+  //      Agenda (les créneaux déjà pris disparaissent tout seuls) et activer
+  //      la visio (Google Meet) dans l'événement
+  //   3. coller ici l'adresse publique de l'événement, par exemple
+  //        "https://calendly.com/oneiroparis/conseil-30min"
+  //        "https://cal.com/oneiroparis/conseil-30min"
+  //   4. relancer le build : python site/_build/build.py
+  // Tant que url est vide, le site garde le widget de créneaux ci-dessous
+  // (booking), qui, lui, passe encore par un email pré-rempli.
   calendly: {
-    enabled: false,
+    enabled: true,
     url: "",
   },
 

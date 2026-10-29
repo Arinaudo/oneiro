@@ -107,7 +107,7 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  // Priority: Calendly if enabled > slot widget (config.booking) > free-form request
+  // Priority: online booking (Calendly, Cal.com...) if a URL is set > slot widget (config.booking) > free-form request
   const zone = document.getElementById("calendly-zone");
   const slotsZone = document.getElementById("slots-zone");
   const form = document.getElementById("rdv-form");
@@ -122,12 +122,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const fmtTime = d => new Intl.DateTimeFormat("en-GB", { hour: "2-digit", minute: "2-digit", hour12: false }).format(d);
   const label = d => fmtDay.format(d) + " at " + fmtTime(d);
 
-  if (cal.enabled && cal.url) {
-    const sep = cal.url.includes("?") ? "&" : "?";
+  if (cal.url && cal.enabled !== false) {
+    // The provider is detected from the URL: only its own display parameters are added.
+    let src = cal.url;
+    const sep = src.includes("?") ? "&" : "?";
+    if (/calendly\.com/.test(src)) src += sep + "hide_gdpr_banner=1&background_color=FAF8F4&text_color=17150F&primary_color=AE8C55";
+    else if (/cal\.com/.test(src)) src += sep + "embed=true&layout=month_view&theme=light";
+    const lead = zone.closest("section").querySelector(".section-sub");
+    if (lead) lead.textContent = "Pick a day and a time: booking is instant, with the confirmation and video link sent by email. No back-and-forth messages needed.";
     zone.innerHTML = `
-      <iframe src="${cal.url}${sep}hide_gdpr_banner=1&background_color=FAF8F4&text_color=17150F&primary_color=AE8C55"
+      <iframe src="${src}"
         title="Book an appointment" style="width:100%;min-height:760px;border:1px solid var(--line);background:#fff" loading="lazy"></iframe>
-      <p class="form__hint" style="margin:18px 0 10px">Instant booking, with the confirmation and video link sent by email.
+      <p class="form__hint" style="margin:18px 0 10px">You get the confirmation by email, with the option to reschedule or cancel.
         <a href="#" id="show-form" style="border-bottom:1px solid var(--gold)">Prefer to write to us? Show the form.</a></p>`;
     form.style.display = "none";
     document.getElementById("show-form").addEventListener("click", e => {

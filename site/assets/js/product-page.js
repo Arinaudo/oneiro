@@ -11,10 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
     collectionHref: "collection.html",
     titleSuffix: " | Oneiro Paris",
     from: "From ",
-    klarnaSplit: t => `or <b>3 × ${t}</b> with Klarna — interest free`,
     buy: "Buy this piece",
     reserve: "Reserve this piece",
-    reserveNote: "Online purchase is coming soon. In the meantime, reserving by email commits you to nothing — we come back to you within 24 working hours with the exact quote and the secure payment options (card, bank transfer, Klarna in 3).",
+    reserveNote: "Online purchase is coming soon. In the meantime, reserving by email commits you to nothing — we come back to you within 24 working hours with the exact quote and the secure payment options (card, bank transfer).",
     video: "See this piece by video",
     videoHref: "book-appointment.html",
     soldOut: c => `This piece is currently sold out — <a href="${c}">contact us</a> to be told when it returns, or for an equivalent creation.`,
@@ -33,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     accDelivery: "Timing &amp; delivery",
     accDeliveryText: c => `Every piece is made to order in our French workshop: allow 2 to 7 weeks depending on complexity. Free, tracked delivery in France and internationally. A date you cannot miss? <a href="${c}">Tell us before you order.</a>`,
     accReturns: "Returns, warranty &amp; care",
-    accReturnsText: g => `15 day returns on fine jewellery (unworn, in its original condition). Personalised creations and loose stones cannot be returned or exchanged. Manufacturing warranty, resizing possible depending on the model. <a href="${g}">All our guarantees.</a>`,
+    accReturnsText: g => `15 day returns on fine jewellery (unworn, in its original condition). Loose stones cannot be returned or exchanged. Manufacturing warranty, resizing possible depending on the model. <a href="${g}">All our guarantees.</a>`,
     accCustom: "Personalise this model",
     accCustomText: s => `Another stone, another shape, other proportions, an engraving: this model can serve as the starting point for a bespoke creation. <a href="${s}">See how it works.</a>`,
     guaranteesHref: "guarantees.html",
@@ -45,10 +44,9 @@ document.addEventListener("DOMContentLoaded", () => {
     collectionHref: "collection.html",
     titleSuffix: " | Oneiro Paris",
     from: "À partir de ",
-    klarnaSplit: t => `ou <b>3 × ${t}</b> avec Klarna — sans frais`,
     buy: "Acheter cette pièce",
     reserve: "Réserver cette pièce",
-    reserveNote: "L'achat en ligne arrive bientôt. En attendant, la réservation par email est sans engagement — nous revenons vers vous sous 24 h ouvrées avec le devis exact et les modalités de paiement sécurisé (CB, virement, Klarna 3×).",
+    reserveNote: "L'achat en ligne arrive bientôt. En attendant, la réservation par email est sans engagement — nous revenons vers vous sous 24 h ouvrées avec le devis exact et les modalités de paiement sécurisé (CB, virement).",
     video: "Voir cette pièce en visio",
     videoHref: "rendez-vous.html",
     soldOut: c => `Cette pièce est actuellement épuisée — <a href="${c}">contactez-nous</a> pour être prévenu·e de son retour ou pour une création équivalente.`,
@@ -67,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
     accDelivery: "Délais &amp; livraison",
     accDeliveryText: c => `Chaque pièce est réalisée à la demande dans notre atelier français : comptez 2 à 7 semaines selon la complexité. Livraison offerte et suivie, en France et à l'international. Une date impérative ? <a href="${c}">Dites-le nous avant de commander.</a>`,
     accReturns: "Retours, garantie &amp; entretien",
-    accReturnsText: g => `Retour sous 15 jours pour la joaillerie fine (pièce non portée, dans son état d'origine). Les créations personnalisées et pierres seules ne sont ni reprises ni échangées. Garantie fabrication, mise à taille possible selon modèle. <a href="${g}">Toutes nos garanties.</a>`,
+    accReturnsText: g => `Retour sous 15 jours pour la joaillerie fine (pièce non portée, dans son état d'origine). Les pierres seules ne sont ni reprises ni échangées. Garantie fabrication, mise à taille possible selon modèle. <a href="${g}">Toutes nos garanties.</a>`,
     accCustom: "Personnaliser ce modèle",
     accCustomText: s => `Autre pierre, autre forme, autres proportions, gravure : ce modèle peut servir de point de départ à une création sur-mesure. <a href="${s}">Voir comment ça marche.</a>`,
     guaranteesHref: "garanties.html",
@@ -116,10 +114,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const price = v ? v.price : (p.priceFrom || null);
     const prefix = v ? "" : P.from;
     let html = `<div class="pinfo__price">${prefix}${O.fmt(price)}</div>`;
-    if (price) {
-      const third = Math.round(price / 3);
-      html += `<div class="pinfo__klarna">${P.klarnaSplit(O.fmt(third))}</div>`;
-    }
     return html;
   }
 

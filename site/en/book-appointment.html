@@ -30,11 +30,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/style.css?v=8548c242">
-  <script src="/assets/js/config.js?v=8548c242" defer></script>
-  <script src="/assets/js/products-data.js?v=8548c242" defer></script>
-  <script src="/assets/js/products-en.js?v=8548c242" defer></script>
-  <script src="/assets/js/app.js?v=8548c242" defer></script>
+  <link rel="stylesheet" href="/assets/css/style.css?v=62f1c972">
+  <script src="/assets/js/config.js?v=62f1c972" defer></script>
+  <script src="/assets/js/products-data.js?v=62f1c972" defer></script>
+  <script src="/assets/js/products-en.js?v=62f1c972" defer></script>
+  <script src="/assets/js/app.js?v=62f1c972" defer></script>
 </head>
 <body>
 <div class="topbar">A jewellery house entirely online — free delivery, in France and worldwide</div>
@@ -187,7 +187,7 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  // Priority: Calendly if enabled > slot widget (config.booking) > free-form request
+  // Priority: online booking (Calendly, Cal.com...) if a URL is set > slot widget (config.booking) > free-form request
   const zone = document.getElementById("calendly-zone");
   const slotsZone = document.getElementById("slots-zone");
   const form = document.getElementById("rdv-form");
@@ -202,12 +202,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const fmtTime = d => new Intl.DateTimeFormat("en-GB", { hour: "2-digit", minute: "2-digit", hour12: false }).format(d);
   const label = d => fmtDay.format(d) + " at " + fmtTime(d);
 
-  if (cal.enabled && cal.url) {
-    const sep = cal.url.includes("?") ? "&" : "?";
+  if (cal.url && cal.enabled !== false) {
+    // The provider is detected from the URL: only its own display parameters are added.
+    let src = cal.url;
+    const sep = src.includes("?") ? "&" : "?";
+    if (/calendly\.com/.test(src)) src += sep + "hide_gdpr_banner=1&background_color=FAF8F4&text_color=17150F&primary_color=AE8C55";
+    else if (/cal\.com/.test(src)) src += sep + "embed=true&layout=month_view&theme=light";
+    const lead = zone.closest("section").querySelector(".section-sub");
+    if (lead) lead.textContent = "Pick a day and a time: booking is instant, with the confirmation and video link sent by email. No back-and-forth messages needed.";
     zone.innerHTML = `
-      <iframe src="${cal.url}${sep}hide_gdpr_banner=1&background_color=FAF8F4&text_color=17150F&primary_color=AE8C55"
+      <iframe src="${src}"
         title="Book an appointment" style="width:100%;min-height:760px;border:1px solid var(--line);background:#fff" loading="lazy"></iframe>
-      <p class="form__hint" style="margin:18px 0 10px">Instant booking, with the confirmation and video link sent by email.
+      <p class="form__hint" style="margin:18px 0 10px">You get the confirmation by email, with the option to reschedule or cancel.
         <a href="#" id="show-form" style="border-bottom:1px solid var(--gold)">Prefer to write to us? Show the form.</a></p>`;
     form.style.display = "none";
     document.getElementById("show-form").addEventListener("click", e => {
@@ -332,7 +338,7 @@ document.addEventListener("DOMContentLoaded", () => {
     </svg>
       <p>Bespoke fine jewellery in 18 carat gold set with certified diamonds, designed in Paris and made in France. No boutique — and that is a choice.</p>
       <div class="footer__pay">
-        <span>CB</span><span>Visa</span><span>Mastercard</span><span>Amex</span><span>PayPal</span><span>Apple&nbsp;Pay</span><span>Klarna&nbsp;3×</span><span>Bank&nbsp;transfer</span>
+        <span>CB</span><span>Visa</span><span>Mastercard</span><span>Amex</span><span>PayPal</span><span>Apple&nbsp;Pay</span><span>Bank&nbsp;transfer</span>
       </div>
       <div class="footer__lang"><span class="langswitch" role="group" aria-label="Language selection"><a href="/rendez-vous.html" hreflang="fr" lang="fr" aria-current="false">FR</a><span aria-hidden="true">/</span><a href="/en/book-appointment.html" hreflang="en" lang="en" aria-current="true">EN</a></span></div>
     </div>

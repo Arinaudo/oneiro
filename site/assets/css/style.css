@@ -310,8 +310,8 @@ h1, h2, h3, .display {
 .gallery__thumbs img { width: 100%; height: 100%; object-fit: cover; }
 .pinfo h1 { font-size: clamp(32px, 4vw, 46px); margin: 6px 0 14px; }
 .pinfo__price { font-size: 26px; font-family: var(--serif); margin-bottom: 6px; }
-.pinfo__klarna { font-size: 13.5px; color: var(--taupe); margin-bottom: 26px; }
-.pinfo__klarna b { color: var(--ink); font-weight: 500; }
+.pinfo__sub { font-size: 13.5px; color: var(--taupe); margin-bottom: 26px; }
+.pinfo__sub b { color: var(--ink); font-weight: 500; }
 .pinfo__desc { color: var(--taupe); margin-bottom: 30px; font-size: 16px; }
 .opt { margin-bottom: 22px; }
 .opt label { display: block; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 10px; color: var(--ink); }
@@ -704,3 +704,9 @@ h1.has-wish .wish-btn svg { width: 20px; height: 20px; }
   .rdv-float { left: 14px; bottom: 16px; padding: 13px 18px; font-size: 11.5px; }
   .langswitch { font-size: 11px; letter-spacing: .1em; }
 }
+
+/* Atouts de la page Diamants : simple liste d'informations, volontairement
+   sans bordure ni fond pour ne pas ressembler a des boutons. */
+.facts { list-style: none; margin: 30px 0 0; padding: 18px 0 0; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 10px 34px; }
+.facts li { position: relative; padding-left: 20px; font-size: 14.5px; line-height: 1.5; color: var(--taupe); cursor: default; }
+.facts li::before { content: "\25C6"; position: absolute; left: 0; top: 2px; font-size: 9px; line-height: 1.9; color: var(--gold); }

@@ -56,6 +56,41 @@ l'API ne répond pas, la page Diamants retombe silencieusement sur du contenu de
 repli : ne jamais casser ce comportement. Initialiser les compteurs à 0
 (`this._token = 0`), sinon `NaN !== NaN` rejette toutes les réponses.
 
+## Réservation de rendez-vous
+
+La page `rendez-vous.html` (FR) et `en/book-appointment.html` (EN) affichent un
+widget de réservation embarqué (iframe Calendly ou Cal.com) dès que
+`calendly.url` est renseigné dans `site/assets/js/config.js`. Le fournisseur est
+détecté à l'URL. Tant que l'URL est vide, le site retombe sur un widget de
+créneaux qui passe par un email pré-rempli. Ne jamais supprimer ce repli.
+
+## Journal : génération d'articles sur les fiançailles de célébrités
+
+`site/_build/journal_auto.py` (Python, bibliothèque standard) : veille
+d'actualité, brouillon FR + EN, contrôles, publication dans
+`_articles_registry.py`, puis `build.py`. Commandes : `scan`, `draft`, `auto`,
+`list`, `publish` (voir le docstring du fichier). Les brouillons, l'état et la clé
+d'API vivent à la racine du projet (`journal_drafts/`, `journal_state.json`,
+`journal.env`), hors de `site/` et hors de GitHub.
+
+Règles que l'outil applique et que tout contributeur doit respecter :
+- N'écrire qu'à partir des sources récupérées. Aucune citation inventée (le
+  contrôle refuse toute citation absente des sources).
+- Carats et prix de la presse = estimations, à signaler comme telles.
+- Aucun lien suggéré entre Oneiro et les personnes citées (avertissement ajouté
+  automatiquement), aucun détail de vie privée, aucune reproduction de dessin.
+- Aucune photo de personnalité : l'image de la carte est celle d'une pièce de la
+  collection.
+- Les articles de ce type sont toujours relus par un humain avant mise en ligne,
+  sauf `auto --publish` quand tous les contrôles passent sans réserve.
+
+## Paiement et retours (décisions du propriétaire, octobre 2026)
+
+- Klarna n'est pas supporté : ne plus le mentionner nulle part.
+- La mention "pas de retour sur le sur-mesure" a été retirée des pages
+  publiques (garanties, fiches produit, CGV section 2). L'exclusion légale du
+  droit de rétractation (article L221-28) reste dans la section 5 des CGV.
+
 ## Pièges connus
 
 - **Avant de lancer `build.py`**, vérifier que les fichiers sources édités sont

@@ -197,13 +197,26 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Bloc inspirations : email pre-rempli, pret a recevoir les pieces jointes
+  const params = new URLSearchParams(window.location.search);
+  const inspiParam = params.get("inspiration");
+  let inspiSubject = "Mes inspirations : projet Oneiro";
+  let inspiIntro = "Bonjour,\n\nVoici quelques photos et vid\u00e9os qui me servent d'inspiration pour mon projet.\n\n";
+  if (inspiParam) {
+    inspiSubject = "Inspiration bague sur-mesure : " + inspiParam;
+    inspiIntro = "Bonjour,\n\nJ'ai vu votre article et je souhaite cr\u00e9er une bague sur-mesure inspir\u00e9e de : " + inspiParam + ".\n\nVoici quelques photos et pr\u00e9cisions.\n\n";
+    const msgField = document.getElementById("r-msg");
+    if (msgField && !msgField.value) {
+      msgField.value = "Inspiration : bague sur-mesure inspir\u00e9e de " + inspiParam;
+    }
+  }
+
   document.getElementById("inspi-mail").href = O.mailto(
-    "Mes inspirations — projet Oneiro",
-    "Bonjour,\n\nVoici quelques photos et vidéos qui me servent d'inspiration pour mon projet.\n\n" +
-    "N'oubliez pas de joindre vos fichiers à cet email avant de l'envoyer.\n\n" +
-    "- Mon prénom et nom : \n" +
+    inspiSubject,
+    inspiIntro +
+    "N'oubliez pas de joindre vos fichiers \u00e0 cet email avant de l'envoyer.\n\n" +
+    "- Mon pr\u00e9nom et nom : \n" +
     "- Ce que j'aime dans ces images : \n" +
-    "- Mon projet en deux mots : \n");
+    "- Mon budget indicatif : \n");
 
   form.addEventListener("submit", e => {
     e.preventDefault();

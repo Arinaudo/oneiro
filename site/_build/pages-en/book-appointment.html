@@ -197,13 +197,26 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Inspiration block: a pre-filled email, ready for the attachments
+  const params = new URLSearchParams(window.location.search);
+  const inspiParam = params.get("inspiration");
+  let inspiSubject = "My inspirations: Oneiro project";
+  let inspiIntro = "Hello,\n\nHere are a few photographs and videos I am using as inspiration for my project.\n\n";
+  if (inspiParam) {
+    inspiSubject = "Bespoke inspiration: " + inspiParam;
+    inspiIntro = "Hello,\n\nI saw your article and I would like to create a bespoke ring inspired by: " + inspiParam + ".\n\nHere are a few photographs and details.\n\n";
+    const msgField = document.getElementById("r-msg");
+    if (msgField && !msgField.value) {
+      msgField.value = "Inspiration: bespoke ring inspired by " + inspiParam;
+    }
+  }
+
   document.getElementById("inspi-mail").href = O.mailto(
-    "My inspirations — Oneiro project",
-    "Hello,\n\nHere are a few photographs and videos I am using as inspiration for my project.\n\n" +
+    inspiSubject,
+    inspiIntro +
     "Remember to attach your files to this email before sending it.\n\n" +
     "- My first and last name: \n" +
     "- What I like in these images: \n" +
-    "- My project in two words: \n");
+    "- My indicative budget: \n");
 
   form.addEventListener("submit", e => {
     e.preventDefault();

@@ -1,4 +1,4 @@
-// Fiche produit — hydratation (gallerie, variantes, prix, CTA).
+// Fiche produit - hydratation (galerie, variantes, prix, CTA).
 // Handle via window.PRODUCT_HANDLE (pages statiques) ou ?p= (produit.html).
 // Bilingue : les libelles suivent <html lang="...">, lu par app.js (O.lang).
 document.addEventListener("DOMContentLoaded", () => {
@@ -11,63 +11,61 @@ document.addEventListener("DOMContentLoaded", () => {
     collectionHref: "collection.html",
     titleSuffix: " | Oneiro Paris",
     from: "From ",
+    priceOnRequest: "Price on request",
     buy: "Buy this piece",
-    reserve: "Reserve this piece",
-    reserveNote: "Online purchase is coming soon. In the meantime, reserving by email commits you to nothing — we come back to you within 24 working hours with the exact quote and the secure payment options (card, bank transfer).",
+    reserve: "Contact us for this piece",
+    reserveNote: "Reserving commits you to nothing: we come back to you within 24 working hours with full guidance and bespoke options.",
     video: "See this piece by video",
     videoHref: "book-appointment.html",
-    soldOut: c => `This piece is currently sold out — <a href="${c}">contact us</a> to be told when it returns, or for an equivalent creation.`,
-    variantOut: "This configuration is momentarily unavailable — a close configuration can be made on request.",
+    soldOut: c => `This piece is currently unavailable: <a href="${c}">contact us</a> for an equivalent creation.`,
+    variantOut: "This configuration is momentarily unavailable: a bespoke equivalent can be crafted on request.",
     contactHref: "contact.html",
-    customisable: " — customisable",
-    defaultDesc: "An Oneiro creation in 18 carat gold set with certified diamonds. Further details and photographs on request — we answer within 24 working hours.",
-    mailSubject: t => "Reservation — " + t,
-    mailBody: (t, lines) => "Hello,\n\nI would like to reserve the creation “" + t + "” in the following configuration:\n" + lines + "\n\nPlease come back to me to finalise the order.\n",
+    customisable: " - customisable",
+    defaultDesc: "An Oneiro creation in 14k gold, 18k gold or platinum set with GIA, IGI or HRD certified diamonds. Further details and photographs on request: we answer within 24 working hours.",
     barBuy: "Buy",
-    barReserve: "Reserve this piece",
+    barReserve: "Contact us",
     barChosen: "chosen configuration",
     barFrom: "from",
     accMaterials: "Materials &amp; certification",
-    accMaterialsText: '18 carat gold (yellow, white or rose depending on the configuration). GIA or IGI certified diamonds — untreated natural stones from conflict-free sources, or lab-grown diamonds. The certificate of the centre stone is handed over with the piece.',
+    accMaterialsText: '14k gold, 18k gold or platinum. GIA, IGI or HRD certified diamonds: untreated natural stones from conflict-free sources, or lab-grown diamonds. The certificate of the centre stone is handed over with the piece.',
     accDelivery: "Timing &amp; delivery",
-    accDeliveryText: c => `Every piece is made to order in our French workshop: allow 2 to 7 weeks depending on complexity. Free, tracked delivery in France and internationally. A date you cannot miss? <a href="${c}">Tell us before you order.</a>`,
+    accDeliveryText: c => `Every piece is made to order in our French workshop: allow 4 to 6 weeks on average depending on complexity. Free, tracked delivery in France and internationally. A date you cannot miss? <a href="${c}">Tell us before you order.</a>`,
     accReturns: "Returns, warranty &amp; care",
-    accReturnsText: g => `15 day returns on fine jewellery (unworn, in its original condition). Loose stones cannot be returned or exchanged. Manufacturing warranty, resizing possible depending on the model. <a href="${g}">All our guarantees.</a>`,
+    accReturnsText: g => `In accordance with article L221-28, every bespoke creation approved in 3D is crafted exclusively for you and cannot be returned. Statutory warranty covering manufacturing defects, resizing on request depending on feasibility and model structure. <a href="${g}">All our guarantees.</a>`,
     accCustom: "Personalise this model",
     accCustomText: s => `Another stone, another shape, other proportions, an engraving: this model can serve as the starting point for a bespoke creation. <a href="${s}">See how it works.</a>`,
     guaranteesHref: "guarantees.html",
     customHref: "custom-made.html",
   } : {
-    notFound: "Création introuvable",
-    notFoundText: "Cette pièce n'existe pas ou n'est plus au catalogue.",
+    notFound: "Cr\u00e9ation introuvable",
+    notFoundText: "Cette pi\u00e8ce n'existe pas ou n'est plus au catalogue.",
     seeCollection: "Voir la collection",
     collectionHref: "collection.html",
     titleSuffix: " | Oneiro Paris",
-    from: "À partir de ",
-    buy: "Acheter cette pièce",
-    reserve: "Réserver cette pièce",
-    reserveNote: "L'achat en ligne arrive bientôt. En attendant, la réservation par email est sans engagement — nous revenons vers vous sous 24 h ouvrées avec le devis exact et les modalités de paiement sécurisé (CB, virement).",
-    video: "Voir cette pièce en visio",
+    from: "\u00c0 partir de ",
+    priceOnRequest: "Prix sur demande",
+    buy: "Acheter cette pi\u00e8ce",
+    reserve: "Nous contacter pour cette pi\u00e8ce",
+    reserveNote: "La demande d'information est sans engagement : nous revenons vers vous sous 24 h ouvr\u00e9es avec les d\u00e9tails et les options sur-mesure.",
+    video: "Voir cette pi\u00e8ce en visio",
     videoHref: "rendez-vous.html",
-    soldOut: c => `Cette pièce est actuellement épuisée — <a href="${c}">contactez-nous</a> pour être prévenu·e de son retour ou pour une création équivalente.`,
-    variantOut: "Cette configuration est momentanément indisponible — une configuration proche peut être réalisée sur demande.",
+    soldOut: c => `Cette pi\u00e8ce est actuellement indisponible : <a href="${c}">contactez-nous</a> pour une cr\u00e9ation \u00e9quivalente.`,
+    variantOut: "Cette configuration est momentan\u00e9ment indisponible : une r\u00e9alisation sur-mesure \u00e9quivalente est possible.",
     contactHref: "contact.html",
-    customisable: " — personnalisable",
-    defaultDesc: "Création Oneiro en or 18 carats et diamants certifiés. Détails et photos complémentaires sur demande — nous répondons sous 24 h ouvrées.",
-    mailSubject: t => "Réservation — " + t,
-    mailBody: (t, lines) => "Bonjour,\n\nJe souhaite réserver la création « " + t + " » dans la configuration suivante :\n" + lines + "\n\nMerci de me recontacter pour finaliser la commande.\n",
+    customisable: " - personnalisable",
+    defaultDesc: "Cr\u00e9ation Oneiro en or 14k, 18k ou platine et diamants certifi\u00e9s GIA, IGI ou HRD. D\u00e9tails et photos compl\u00e9mentaires sur demande : nous r\u00e9pondons sous 24 h ouvr\u00e9es.",
     barBuy: "Acheter",
-    barReserve: "Réserver cette pièce",
+    barReserve: "Nous contacter",
     barChosen: "configuration choisie",
-    barFrom: "à partir de",
-    accMaterials: "Matières &amp; certification",
-    accMaterialsText: "Or 18 carats (jaune, blanc ou rose selon configuration). Diamants certifiés GIA ou IGI — naturels non traités issus de zones sans conflit, ou diamants de laboratoire. Le certificat de la pierre centrale est remis avec le bijou.",
-    accDelivery: "Délais &amp; livraison",
-    accDeliveryText: c => `Chaque pièce est réalisée à la demande dans notre atelier français : comptez 2 à 7 semaines selon la complexité. Livraison offerte et suivie, en France et à l'international. Une date impérative ? <a href="${c}">Dites-le nous avant de commander.</a>`,
+    barFrom: "\u00e0 partir de",
+    accMaterials: "Mati\u00e8res &amp; certification",
+    accMaterialsText: "Or 14k, 18k ou platine. Diamants certifi\u00e9s GIA, IGI ou HRD : naturels non trait\u00e9s issus de zones sans conflit, ou diamants de laboratoire. Le certificat de la pierre centrale est remis avec le bijou.",
+    accDelivery: "D\u00e9lais &amp; livraison",
+    accDeliveryText: c => `Chaque pi\u00e8ce est r\u00e9alis\u00e9e \u00e0 la demande dans notre atelier fran\u00e7ais : comptez en moyenne 4 \u00e0 6 semaines selon la complexit\u00e9. Livraison offerte et suivie, en France et \u00e0 l'international. Une date imp\u00e9rative ? <a href="${c}">Dites-le nous avant de commander.</a>`,
     accReturns: "Retours, garantie &amp; entretien",
-    accReturnsText: g => `Retour sous 15 jours pour la joaillerie fine (pièce non portée, dans son état d'origine). Les pierres seules ne sont ni reprises ni échangées. Garantie fabrication, mise à taille possible selon modèle. <a href="${g}">Toutes nos garanties.</a>`,
-    accCustom: "Personnaliser ce modèle",
-    accCustomText: s => `Autre pierre, autre forme, autres proportions, gravure : ce modèle peut servir de point de départ à une création sur-mesure. <a href="${s}">Voir comment ça marche.</a>`,
+    accReturnsText: g => `Conform\u00e9ment \u00e0 l'article L221-28, chaque cr\u00e9ation sur-mesure valid\u00e9e en 3D est confectionn\u00e9e exclusivement pour vous et ne fait l'objet d'aucun retour. Garantie l\u00e9gale contre tout d\u00e9faut de fabrication, mise \u00e0 taille sur demande selon faisabilit\u00e9 et structure du mod\u00e8le. <a href="${g}">Toutes nos garanties.</a>`,
+    accCustom: "Personnaliser ce mod\u00e8le",
+    accCustomText: s => `Autre pierre, autre forme, autres proportions, gravure : ce mod\u00e8le peut servir de point de d\u00e9part \u00e0 une cr\u00e9ation sur-mesure. <a href="${s}">Voir comment \u00e7a marche.</a>`,
     guaranteesHref: "garanties.html",
     customHref: "sur-mesure.html",
   };
@@ -93,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const TITLE = O.title(p);
-  document.title = TITLE + " — " + O.catLabel(p.category) + P.titleSuffix;
+  document.title = TITLE + " - " + O.catLabel(p.category) + P.titleSuffix;
 
   // --- État de sélection
   const sel = {};
@@ -104,17 +102,16 @@ document.addEventListener("DOMContentLoaded", () => {
     return p.variants.find(v => v.title === want) || null;
   }
 
-  function mailtoLink() {
-    const lines = Object.entries(sel).map(([k, val]) => "- " + tr(k) + ": " + tr(val)).join("\n");
-    return O.mailto(P.mailSubject(TITLE), P.mailBody(TITLE, lines));
+  function contactLink() {
+    const lines = Object.entries(sel).map(([k, val]) => tr(k) + ": " + tr(val)).join(", ");
+    const sp = new URLSearchParams();
+    sp.set("piece", TITLE);
+    if (lines) sp.set("config", lines);
+    return `${P.contactHref}?${sp.toString()}`;
   }
 
   function priceBlock() {
-    const v = currentVariant();
-    const price = v ? v.price : (p.priceFrom || null);
-    const prefix = v ? "" : P.from;
-    let html = `<div class="pinfo__price">${prefix}${O.fmt(price)}</div>`;
-    return html;
+    return `<div class="pinfo__price">${P.priceOnRequest}</div>`;
   }
 
   function ctaBlock() {
@@ -123,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (cfg.enabled && cfg.domain) {
       html += `<a class="btn btn--solid" href="https://${cfg.domain}/products/${p.handle}" target="_blank" rel="noopener">${P.buy}</a>`;
     } else {
-      html += `<a class="btn btn--solid" href="${mailtoLink()}">${P.reserve}</a>`;
+      html += `<a class="btn btn--solid" href="${contactLink()}">${P.reserve}</a>`;
       html += `<span class="pinfo__note">${P.reserveNote}</span>`;
     }
     html += `<a class="btn" href="${P.videoHref}">${P.video}</a></div>`;
@@ -155,7 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const imgs = p.images && p.images.length ? p.images : [];
     root.innerHTML = `
       <div class="gallery">
-        <div class="gallery__main" style="position:relative"><img id="gmain" src="${O.img(imgs[0], 1100)}" alt="${TITLE} — Oneiro Paris"></div>
+        <div class="gallery__main" style="position:relative"><img id="gmain" src="${O.img(imgs[0], 1100)}" alt="${TITLE} - Oneiro Paris"></div>
         ${imgs.length > 1 ? `<div class="gallery__thumbs">${imgs.map((s, i) =>
           `<button type="button" class="${i === 0 ? "on" : ""}" data-i="${i}"><img src="${O.img(s, 200)}" alt=""></button>`).join("")}</div>` : ""}
       </div>
@@ -222,18 +219,23 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add("has-pbar");
 
   function paintBar() {
-    const v = currentVariant();
-    const price = v ? v.price : (p.priceFrom || null);
     const cfg = ONEIRO_CONFIG.shopify;
     const label = (cfg.enabled && cfg.domain) ? P.barBuy : P.barReserve;
     const href = (cfg.enabled && cfg.domain)
       ? `https://${cfg.domain}/products/${p.handle}`
-      : mailtoLink();
+      : contactLink();
     bar.innerHTML = `
-      <span class="pbar__price">${O.fmt(price)}<small>${v ? P.barChosen : P.barFrom}</small></span>
+      <span class="pbar__price">${P.priceOnRequest}</span>
       <a class="btn btn--solid" href="${href}">${label}</a>`;
   }
   paintBar();
+
+  // Suggestions : même catégorie d'abord, puis le reste
+  const rel = ONEIRO_PRODUCTS.filter(x => x.handle !== p.handle)
+    .sort((a, b) => (b.category === p.category) - (a.category === p.category))
+    .slice(0, 4);
+  O.renderCards(document.getElementById("related"), rel);
+});
 
   // Suggestions : même catégorie d'abord, puis le reste
   const rel = ONEIRO_PRODUCTS.filter(x => x.handle !== p.handle)

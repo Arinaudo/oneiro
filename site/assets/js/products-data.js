@@ -1,4 +1,4 @@
-// Données produits Oneiro Paris — générées depuis oneiroparis.com/products.json (12/06/2026)
+// Données produits Oneiro Paris - générées depuis oneiroparis.com/products.json (12/06/2026)
 // 22 produits. Prix en EUR (nombres). Variantes à prix 0 exclues (bug connu du site source).
 // Images .heic exclues (non affichables en web). Max 3 images par produit.
 
@@ -11,7 +11,7 @@ const ONEIRO_PRODUCTS = [
     customizable: true,
     description: "Un classique, un intemporel. Un bijou qui a plu, plaît et plaira encore dans le temps. Porté pour un événement ou dans la vie de tous les jours, il fera encore et toujours son effet. Alors laissez-vous tenter et brillez. Personnalisable - choisissez la taille de vos diamants (min 2mm - max 4mm).",
     options: [
-      {name:"Couleur", values:["Or","Or blanc","Or rose"]},
+      {name:"Couleur", values:["Or","Or blanc","Or rose","Platine"]},
       {name:"Taille diamants", values:["2mm","3mm","4mm"]},
       {name:"Type de diamants", values:["Naturel","Laboratoire"]}
     ],
@@ -21,7 +21,9 @@ const ONEIRO_PRODUCTS = [
       {title:"Or rose / 2mm / Naturel", price: 7000, available: false},
       {title:"Or / 2mm / Laboratoire", price: 5000, available: false},
       {title:"Or blanc / 2mm / Laboratoire", price: 5000, available: false},
-      {title:"Or rose / 2mm / Laboratoire", price: 5000, available: false}
+      {title:"Or rose / 2mm / Laboratoire", price: 5000, available: false},
+      {title:"Platine / 2mm / Naturel", price: 7000, available: false},
+      {title:"Platine / 2mm / Laboratoire", price: 5000, available: false}
     ],
     priceFrom: 5000,
     priceNatural: 7000,
@@ -41,7 +43,7 @@ const ONEIRO_PRODUCTS = [
     customizable: true,
     description: "Bague de fiançailles Trilogie et monture cathédrale. Ce modèle est composé d'un diamant ovale de 2.5ct et d'une paire de trillions de 0.30ctw. Modèle personnalisable. Prix de départ pour la trilogie avec trillions - pierre centrale à sélectionner séparément.",
     options: [
-      {name:"Couleur", values:["Or","Or blanc","Or rose"]},
+      {name:"Couleur", values:["Or","Or blanc","Or rose","Platine"]},
       {name:"Type de diamants", values:["Naturel","Laboratoire"]}
     ],
     variants: [
@@ -50,7 +52,9 @@ const ONEIRO_PRODUCTS = [
       {title:"Or blanc / Naturel", price: 3300, available: true},
       {title:"Or blanc / Laboratoire", price: 2100, available: true},
       {title:"Or rose / Naturel", price: 3300, available: true},
-      {title:"Or rose / Laboratoire", price: 2100, available: true}
+      {title:"Or rose / Laboratoire", price: 2100, available: true},
+      {title:"Platine / Naturel", price: 3300, available: true},
+      {title:"Platine / Laboratoire", price: 2100, available: true}
     ],
     priceFrom: 2100,
     priceNatural: 3300,
@@ -68,7 +72,7 @@ const ONEIRO_PRODUCTS = [
     customizable: true,
     description: "En collier ou en bracelet, ce pendentif se porte selon vos envies. Choisissez la forme du diamant avec ou sans Halo et portez-le avec une chaîne ou un cordon. Ce pendentif est personnalisable : choix de la forme, taille, caractéristiques ou encore couleur de l'or. Écrivez-nous et personnalisez-le. Chaînes et cordons vendus séparément. Prix de départ pour un diamant laboratoire de 0.30ct. Carat des diamants sur la photo : 1ct et 2ct.",
     options: [
-      {name:"Couleur", values:["Or rose","Or","Or blanc"]},
+      {name:"Couleur", values:["Or rose","Or","Or blanc","Platine"]},
       {name:"Type de diamants", values:["Naturel","Laboratoire"]},
       {name:"Sertissage", values:["Avec griffes","Avec Halo"]}
     ],
@@ -84,7 +88,11 @@ const ONEIRO_PRODUCTS = [
       {title:"Or / Naturel / Avec Halo", price: 2000, available: true},
       {title:"Or / Laboratoire / Avec Halo", price: 1500, available: true},
       {title:"Or blanc / Naturel / Avec Halo", price: 2000, available: true},
-      {title:"Or blanc / Laboratoire / Avec Halo", price: 1500, available: true}
+      {title:"Or blanc / Laboratoire / Avec Halo", price: 1500, available: true},
+      {title:"Platine / Naturel / Avec griffes", price: 1500, available: true},
+      {title:"Platine / Laboratoire / Avec griffes", price: 1000, available: true},
+      {title:"Platine / Naturel / Avec Halo", price: 2000, available: true},
+      {title:"Platine / Laboratoire / Avec Halo", price: 1500, available: true}
     ],
     priceFrom: 1000,
     priceNatural: 1500,
@@ -103,7 +111,7 @@ const ONEIRO_PRODUCTS = [
     customizable: false,
     description: "Magnifique créole en diamant, boucle d'oreille unique sertie d'un micro pavé de diamants et de 4 diamants en suspension.",
     options: [
-      {name:"Couleur", values:["Or rose","Or blanc","Or"]},
+      {name:"Couleur", values:["Or rose","Or blanc","Or","Platine"]},
       {name:"Type de diamants", values:["Naturel","Laboratoire"]}
     ],
     variants: [
@@ -112,7 +120,9 @@ const ONEIRO_PRODUCTS = [
       {title:"Or / Naturel", price: 1800, available: true},
       {title:"Or rose / Laboratoire", price: 1500, available: true},
       {title:"Or blanc / Laboratoire", price: 1500, available: true},
-      {title:"Or / Laboratoire", price: 1500, available: true}
+      {title:"Or / Laboratoire", price: 1500, available: true},
+      {title:"Platine / Naturel", price: 1800, available: true},
+      {title:"Platine / Laboratoire", price: 1500, available: true}
     ],
     priceFrom: 1500,
     priceNatural: 1800,
@@ -128,7 +138,7 @@ const ONEIRO_PRODUCTS = [
     handle: "elya",
     category: "boucles-oreilles",
     customizable: false,
-    description: "Élya – Boucles d'oreilles pendantes Oneiro. D'une grâce infinie, nos boucles d'oreilles pendantes capturent la lumière dans un éclat envoûtant. Un pavé de diamants scintille avec intensité, révélant chaque facette de la brillance pure, tandis que des diamants taille poire se balancent délicatement, comme des gouttes de lumière suspendues. Chaque détail incarne l'élégance aérienne et le raffinement absolu, signature de Oneiro. Conçues pour magnifier chaque mouvement, elles illuminent le visage d'un éclat sophistiqué, parfaites pour une occasion précieuse ou un luxe intemporel au quotidien. Un rêve de lumière, sculpté dans l'éternité.",
+    description: "Élya - Boucles d'oreilles pendantes Oneiro. D'une grâce infinie, nos boucles d'oreilles pendantes capturent la lumière dans un éclat envoûtant. Un pavé de diamants scintille avec intensité, révélant chaque facette de la brillance pure, tandis que des diamants taille poire se balancent délicatement, comme des gouttes de lumière suspendues. Chaque détail incarne l'élégance aérienne et le raffinement absolu, signature de Oneiro. Conçues pour magnifier chaque mouvement, elles illuminent le visage d'un éclat sophistiqué, parfaites pour une occasion précieuse ou un luxe intemporel au quotidien. Un rêve de lumière, sculpté dans l'éternité.",
     options: [
       {name:"Couleur", values:["Or blanc","Platine","Or rose","Or"]},
       {name:"Pierre Centrale", values:["Laboratoire","Naturel"]}
@@ -157,9 +167,9 @@ const ONEIRO_PRODUCTS = [
     handle: "lena",
     category: "boucles-oreilles",
     customizable: false,
-    description: "Éclat Intemporel – Boucles d'oreilles Léna. Symbole de pureté et de raffinement, nos boucles d'oreilles studs capturent l'essence même de l'élégance intemporelle. Conçues avec une précision exquise, elles illuminent le visage d'un éclat subtil, révélant la beauté dans sa forme la plus épurée. Chaque paire est une invitation à la simplicité sophistiquée, un bijou du quotidien qui sublime sans effort. Leur design minimaliste, sublimé par des matériaux précieux, reflète la vision de Oneiro : un rêve de lumière et de perfection. Portées seules pour une touche discrète ou associées à d'autres créations, ces boucles incarnent l'élégance naturelle et l'intemporalité du luxe à la française.",
+    description: "Éclat Intemporel - Boucles d'oreilles Léna. Symbole de pureté et de raffinement, nos boucles d'oreilles studs capturent l'essence même de l'élégance intemporelle. Conçues avec une précision exquise, elles illuminent le visage d'un éclat subtil, révélant la beauté dans sa forme la plus épurée. Chaque paire est une invitation à la simplicité sophistiquée, un bijou du quotidien qui sublime sans effort. Leur design minimaliste, sublimé par des matériaux précieux, reflète la vision de Oneiro : un rêve de lumière et de perfection. Portées seules pour une touche discrète ou associées à d'autres créations, ces boucles incarnent l'élégance naturelle et l'intemporalité du luxe à la française.",
     options: [
-      {name:"Couleur", values:["Or","Or rose","Or blanc"]},
+      {name:"Couleur", values:["Or","Or rose","Or blanc","Platine"]},
       {name:"Pierre Centrale", values:["Naturel","Laboratoire"]}
     ],
     variants: [
@@ -168,7 +178,9 @@ const ONEIRO_PRODUCTS = [
       {title:"Or rose / Naturel", price: 1170, available: true},
       {title:"Or rose / Laboratoire", price: 1170, available: true},
       {title:"Or blanc / Naturel", price: 1170, available: true},
-      {title:"Or blanc / Laboratoire", price: 1170, available: true}
+      {title:"Or blanc / Laboratoire", price: 1170, available: true},
+      {title:"Platine / Naturel", price: 1170, available: true},
+      {title:"Platine / Laboratoire", price: 1170, available: true}
     ],
     priceFrom: 1170,
     priceNatural: 1170,
@@ -187,7 +199,7 @@ const ONEIRO_PRODUCTS = [
     customizable: false,
     description: "Ce pendentif en or jaune dessine un cercle parfait pavé de diamants, dans lequel flottent cinq pierres mobiles aux tailles variées. Leur mouvement naturel capte la lumière à chaque instant, comme une pluie d'étoiles suspendue au cou. Une pièce à la fois délicate et originale, qui attire le regard sans jamais en faire trop.",
     options: [
-      {name:"Couleur", values:["Or rose","Or","Or blanc"]},
+      {name:"Couleur", values:["Or rose","Or","Or blanc","Platine"]},
       {name:"Type de Diamants", values:["Naturels","Laboratoires"]}
     ],
     variants: [
@@ -196,7 +208,9 @@ const ONEIRO_PRODUCTS = [
       {title:"Or / Naturels", price: 2300, available: true},
       {title:"Or / Laboratoires", price: 1900, available: true},
       {title:"Or blanc / Naturels", price: 2300, available: true},
-      {title:"Or blanc / Laboratoires", price: 1900, available: true}
+      {title:"Or blanc / Laboratoires", price: 1900, available: true},
+      {title:"Platine / Naturels", price: 2300, available: true},
+      {title:"Platine / Laboratoires", price: 1900, available: true}
     ],
     priceFrom: 1900,
     priceNatural: 2300,
@@ -214,10 +228,10 @@ const ONEIRO_PRODUCTS = [
     handle: "bague-7",
     category: "bagues",
     customizable: false,
-    description: "",
+    description: "Bague solitaire moderne au charme intemporel. Catalina sublime un diamant central \u00e9tincelant mont\u00e9 sur un anneau d\u00e9licat et \u00e9pur\u00e9 en or ou platine, con\u00e7u pour capter la lumi\u00e8re sous tous les angles. Une cr\u00e9ation lumineuse et raffin\u00e9e, id\u00e9ale pour c\u00e9l\u00e9brer un engagement pr\u00e9cieux.",
     options: [
       {name:"Taille de l’anneau", values:["4","4.5","5","5.5","6","6.5","7","7.5","8","8.5","9"]},
-      {name:"Couleur", values:["Or","Or rose","Or blanc"]},
+      {name:"Couleur", values:["Or","Or rose","Or blanc","Platine"]},
       {name:"Type de diamant", values:["Naturel","Laboratoire"]}
     ],
     variants: [
@@ -231,7 +245,29 @@ const ONEIRO_PRODUCTS = [
       {title:"7.5 / Or / Naturel", price: 2200, available: true}, {title:"7.5 / Or / Laboratoire", price: 1800, available: true}, {title:"7.5 / Or rose / Naturel", price: 2200, available: true}, {title:"7.5 / Or rose / Laboratoire", price: 1800, available: true}, {title:"7.5 / Or blanc / Naturel", price: 2200, available: true}, {title:"7.5 / Or blanc / Laboratoire", price: 1800, available: true},
       {title:"8 / Or / Naturel", price: 2200, available: true}, {title:"8 / Or / Laboratoire", price: 1800, available: true}, {title:"8 / Or rose / Naturel", price: 2200, available: true}, {title:"8 / Or rose / Laboratoire", price: 1800, available: true}, {title:"8 / Or blanc / Naturel", price: 2200, available: true}, {title:"8 / Or blanc / Laboratoire", price: 1800, available: true},
       {title:"8.5 / Or / Naturel", price: 2200, available: true}, {title:"8.5 / Or / Laboratoire", price: 1800, available: true}, {title:"8.5 / Or rose / Naturel", price: 2200, available: true}, {title:"8.5 / Or rose / Laboratoire", price: 1800, available: true}, {title:"8.5 / Or blanc / Naturel", price: 2200, available: true}, {title:"8.5 / Or blanc / Laboratoire", price: 1800, available: true},
-      {title:"9 / Or / Naturel", price: 2200, available: true}, {title:"9 / Or / Laboratoire", price: 1800, available: true}, {title:"9 / Or rose / Naturel", price: 2200, available: true}, {title:"9 / Or rose / Laboratoire", price: 1800, available: true}, {title:"9 / Or blanc / Naturel", price: 2200, available: true}, {title:"9 / Or blanc / Laboratoire", price: 1800, available: true}
+      {title:"9 / Or / Naturel", price: 2200, available: true}, {title:"9 / Or / Laboratoire", price: 1800, available: true}, {title:"9 / Or rose / Naturel", price: 2200, available: true}, {title:"9 / Or rose / Laboratoire", price: 1800, available: true}, {title:"9 / Or blanc / Naturel", price: 2200, available: true}, {title:"9 / Or blanc / Laboratoire", price: 1800, available: true},
+      {title:"4 / Platine / Naturel", price: 2200, available: true},
+      {title:"4 / Platine / Laboratoire", price: 1800, available: true},
+      {title:"4.5 / Platine / Naturel", price: 2200, available: true},
+      {title:"4.5 / Platine / Laboratoire", price: 1800, available: true},
+      {title:"5 / Platine / Naturel", price: 2200, available: true},
+      {title:"5 / Platine / Laboratoire", price: 1800, available: true},
+      {title:"5.5 / Platine / Naturel", price: 2200, available: true},
+      {title:"5.5 / Platine / Laboratoire", price: 1800, available: true},
+      {title:"6 / Platine / Naturel", price: 2200, available: true},
+      {title:"6 / Platine / Laboratoire", price: 1800, available: true},
+      {title:"6.5 / Platine / Naturel", price: 2200, available: true},
+      {title:"6.5 / Platine / Laboratoire", price: 1800, available: true},
+      {title:"7 / Platine / Naturel", price: 2200, available: true},
+      {title:"7 / Platine / Laboratoire", price: 1800, available: true},
+      {title:"7.5 / Platine / Naturel", price: 2200, available: true},
+      {title:"7.5 / Platine / Laboratoire", price: 1800, available: true},
+      {title:"8 / Platine / Naturel", price: 2200, available: true},
+      {title:"8 / Platine / Laboratoire", price: 1800, available: true},
+      {title:"8.5 / Platine / Naturel", price: 2200, available: true},
+      {title:"8.5 / Platine / Laboratoire", price: 1800, available: true},
+      {title:"9 / Platine / Naturel", price: 2200, available: true},
+      {title:"9 / Platine / Laboratoire", price: 1800, available: true}
     ],
     priceFrom: 1800,
     priceNatural: 2200,
@@ -249,9 +285,9 @@ const ONEIRO_PRODUCTS = [
     handle: "bague-8",
     category: "bagues",
     customizable: false,
-    description: "",
+    description: "Une alliance d'\u00e9l\u00e9gance architecturale et de d\u00e9licatesse. La bague Dora met en valeur une silhouette gracieuse et contemporaine, o\u00f9 la puret\u00e9 du diamant s'accorde \u00e0 la finesse d'un anneau pr\u00e9cieux en or ou platine. Une pi\u00e8ce d\u00e9licate et \u00e9tincelante, pens\u00e9e pour un \u00e9clat quotidien ou un moment inoubliable.",
     options: [
-      {name:"Couleur", values:["Or rose","Or","Or blanc"]},
+      {name:"Couleur", values:["Or rose","Or","Or blanc","Platine"]},
       {name:"Taille de l’anneau", values:["4","4.5","5","5.5","6","6.5","7","7.5","8","8.5","9"]},
       {name:"Type de diamant", values:["Naturel","Laboratoire"]}
     ],
@@ -267,7 +303,29 @@ const ONEIRO_PRODUCTS = [
       {title:"Or blanc / 4 / Naturel", price: 1800, available: true}, {title:"Or blanc / 4 / Laboratoire", price: 1600, available: true}, {title:"Or blanc / 4.5 / Naturel", price: 1800, available: true}, {title:"Or blanc / 4.5 / Laboratoire", price: 1600, available: true}, {title:"Or blanc / 5 / Naturel", price: 1800, available: true}, {title:"Or blanc / 5 / Laboratoire", price: 1600, available: true},
       {title:"Or blanc / 5.5 / Naturel", price: 1800, available: true}, {title:"Or blanc / 5.5 / Laboratoire", price: 1600, available: true}, {title:"Or blanc / 6 / Naturel", price: 1800, available: true}, {title:"Or blanc / 6 / Laboratoire", price: 1600, available: true}, {title:"Or blanc / 6.5 / Naturel", price: 1800, available: true}, {title:"Or blanc / 6.5 / Laboratoire", price: 1600, available: true},
       {title:"Or blanc / 7 / Naturel", price: 1800, available: true}, {title:"Or blanc / 7 / Laboratoire", price: 1600, available: true}, {title:"Or blanc / 7.5 / Naturel", price: 1800, available: true}, {title:"Or blanc / 7.5 / Laboratoire", price: 1600, available: true}, {title:"Or blanc / 8 / Naturel", price: 1800, available: true}, {title:"Or blanc / 8 / Laboratoire", price: 1600, available: true},
-      {title:"Or blanc / 8.5 / Naturel", price: 1800, available: true}, {title:"Or blanc / 8.5 / Laboratoire", price: 1600, available: true}, {title:"Or blanc / 9 / Naturel", price: 1800, available: true}, {title:"Or blanc / 9 / Laboratoire", price: 1600, available: true}
+      {title:"Or blanc / 8.5 / Naturel", price: 1800, available: true}, {title:"Or blanc / 8.5 / Laboratoire", price: 1600, available: true}, {title:"Or blanc / 9 / Naturel", price: 1800, available: true}, {title:"Or blanc / 9 / Laboratoire", price: 1600, available: true},
+      {title:"Platine / 4 / Naturel", price: 1800, available: true},
+      {title:"Platine / 4 / Laboratoire", price: 1600, available: true},
+      {title:"Platine / 4.5 / Naturel", price: 1800, available: true},
+      {title:"Platine / 4.5 / Laboratoire", price: 1600, available: true},
+      {title:"Platine / 5 / Naturel", price: 1800, available: true},
+      {title:"Platine / 5 / Laboratoire", price: 1600, available: true},
+      {title:"Platine / 5.5 / Naturel", price: 1800, available: true},
+      {title:"Platine / 5.5 / Laboratoire", price: 1600, available: true},
+      {title:"Platine / 6 / Naturel", price: 1800, available: true},
+      {title:"Platine / 6 / Laboratoire", price: 1600, available: true},
+      {title:"Platine / 6.5 / Naturel", price: 1800, available: true},
+      {title:"Platine / 6.5 / Laboratoire", price: 1600, available: true},
+      {title:"Platine / 7 / Naturel", price: 1800, available: true},
+      {title:"Platine / 7 / Laboratoire", price: 1600, available: true},
+      {title:"Platine / 7.5 / Naturel", price: 1800, available: true},
+      {title:"Platine / 7.5 / Laboratoire", price: 1600, available: true},
+      {title:"Platine / 8 / Naturel", price: 1800, available: true},
+      {title:"Platine / 8 / Laboratoire", price: 1600, available: true},
+      {title:"Platine / 8.5 / Naturel", price: 1800, available: true},
+      {title:"Platine / 8.5 / Laboratoire", price: 1600, available: true},
+      {title:"Platine / 9 / Naturel", price: 1800, available: true},
+      {title:"Platine / 9 / Laboratoire", price: 1600, available: true}
     ],
     priceFrom: 1600,
     priceNatural: 1800,
@@ -287,7 +345,7 @@ const ONEIRO_PRODUCTS = [
     customizable: false,
     description: "Un design audacieux où chaque diamant se distingue : taille marquise, ronde, poire et émeraude s'équilibrent dans une composition moderne en or jaune. Une pièce sculpturale et brillante, pensée pour celles qui aiment se démarquer.",
     options: [
-      {name:"Couleur", values:["Or rose","Or","Or blanc"]},
+      {name:"Couleur", values:["Or rose","Or","Or blanc","Platine"]},
       {name:"Taille de l’anneau", values:["4","4.5","5","5.5","6","6.5","7","7.5","8","8.5","9"]},
       {name:"Type de Diamants", values:["Naturels","Laboratoires"]}
     ],
@@ -303,7 +361,29 @@ const ONEIRO_PRODUCTS = [
       {title:"Or blanc / 4 / Naturels", price: 2340, available: true}, {title:"Or blanc / 4 / Laboratoires", price: 2340, available: true}, {title:"Or blanc / 4.5 / Naturels", price: 2340, available: true}, {title:"Or blanc / 4.5 / Laboratoires", price: 2340, available: true}, {title:"Or blanc / 5 / Naturels", price: 2340, available: true}, {title:"Or blanc / 5 / Laboratoires", price: 2340, available: true},
       {title:"Or blanc / 5.5 / Naturels", price: 2340, available: true}, {title:"Or blanc / 5.5 / Laboratoires", price: 2340, available: true}, {title:"Or blanc / 6 / Naturels", price: 2340, available: true}, {title:"Or blanc / 6 / Laboratoires", price: 2340, available: true}, {title:"Or blanc / 6.5 / Naturels", price: 2340, available: true}, {title:"Or blanc / 6.5 / Laboratoires", price: 2340, available: true},
       {title:"Or blanc / 7 / Naturels", price: 2340, available: true}, {title:"Or blanc / 7 / Laboratoires", price: 2340, available: true}, {title:"Or blanc / 7.5 / Naturels", price: 2340, available: true}, {title:"Or blanc / 7.5 / Laboratoires", price: 2340, available: true}, {title:"Or blanc / 8 / Naturels", price: 2340, available: true}, {title:"Or blanc / 8 / Laboratoires", price: 2340, available: true},
-      {title:"Or blanc / 8.5 / Naturels", price: 2340, available: true}, {title:"Or blanc / 8.5 / Laboratoires", price: 2340, available: true}, {title:"Or blanc / 9 / Naturels", price: 2340, available: true}, {title:"Or blanc / 9 / Laboratoires", price: 2340, available: true}
+      {title:"Or blanc / 8.5 / Naturels", price: 2340, available: true}, {title:"Or blanc / 8.5 / Laboratoires", price: 2340, available: true}, {title:"Or blanc / 9 / Naturels", price: 2340, available: true}, {title:"Or blanc / 9 / Laboratoires", price: 2340, available: true},
+      {title:"Platine / 4 / Naturels", price: 2340, available: true},
+      {title:"Platine / 4 / Laboratoires", price: 2340, available: true},
+      {title:"Platine / 4.5 / Naturels", price: 2340, available: true},
+      {title:"Platine / 4.5 / Laboratoires", price: 2340, available: true},
+      {title:"Platine / 5 / Naturels", price: 2340, available: true},
+      {title:"Platine / 5 / Laboratoires", price: 2340, available: true},
+      {title:"Platine / 5.5 / Naturels", price: 2340, available: true},
+      {title:"Platine / 5.5 / Laboratoires", price: 2340, available: true},
+      {title:"Platine / 6 / Naturels", price: 2340, available: true},
+      {title:"Platine / 6 / Laboratoires", price: 2340, available: true},
+      {title:"Platine / 6.5 / Naturels", price: 2340, available: true},
+      {title:"Platine / 6.5 / Laboratoires", price: 2340, available: true},
+      {title:"Platine / 7 / Naturels", price: 2340, available: true},
+      {title:"Platine / 7 / Laboratoires", price: 2340, available: true},
+      {title:"Platine / 7.5 / Naturels", price: 2340, available: true},
+      {title:"Platine / 7.5 / Laboratoires", price: 2340, available: true},
+      {title:"Platine / 8 / Naturels", price: 2340, available: true},
+      {title:"Platine / 8 / Laboratoires", price: 2340, available: true},
+      {title:"Platine / 8.5 / Naturels", price: 2340, available: true},
+      {title:"Platine / 8.5 / Laboratoires", price: 2340, available: true},
+      {title:"Platine / 9 / Naturels", price: 2340, available: true},
+      {title:"Platine / 9 / Laboratoires", price: 2340, available: true}
     ],
     priceFrom: 2340,
     priceNatural: 2340,
@@ -322,7 +402,7 @@ const ONEIRO_PRODUCTS = [
     customizable: false,
     description: "Une création audacieuse et harmonieuse. Ce duo de diamants taille marquise et ovale, montés sur une large monture en or jaune, joue subtilement avec les contrastes de couleur et de forme. Un bijou puissant, pensé comme une signature.",
     options: [
-      {name:"Couleur", values:["Or rose","Or","Or blanc"]},
+      {name:"Couleur", values:["Or rose","Or","Or blanc","Platine"]},
       {name:"Taille de l’anneau", values:["4","4.5","5","5.5","6","6.5","7","7.5","8","8.5","9"]},
       {name:"Type de Diamants", values:["Naturels","Laboratoires"]}
     ],
@@ -338,7 +418,29 @@ const ONEIRO_PRODUCTS = [
       {title:"Or blanc / 4 / Naturels", price: 2900, available: true}, {title:"Or blanc / 4 / Laboratoires", price: 2900, available: true}, {title:"Or blanc / 4.5 / Naturels", price: 2900, available: true}, {title:"Or blanc / 4.5 / Laboratoires", price: 2900, available: true}, {title:"Or blanc / 5 / Naturels", price: 2900, available: true}, {title:"Or blanc / 5 / Laboratoires", price: 2900, available: true},
       {title:"Or blanc / 5.5 / Naturels", price: 2900, available: true}, {title:"Or blanc / 5.5 / Laboratoires", price: 2900, available: true}, {title:"Or blanc / 6 / Naturels", price: 2900, available: true}, {title:"Or blanc / 6 / Laboratoires", price: 2900, available: true}, {title:"Or blanc / 6.5 / Naturels", price: 2900, available: true}, {title:"Or blanc / 6.5 / Laboratoires", price: 2900, available: true},
       {title:"Or blanc / 7 / Naturels", price: 2900, available: true}, {title:"Or blanc / 7 / Laboratoires", price: 2900, available: true}, {title:"Or blanc / 7.5 / Naturels", price: 2900, available: true}, {title:"Or blanc / 7.5 / Laboratoires", price: 2900, available: true}, {title:"Or blanc / 8 / Naturels", price: 2900, available: true}, {title:"Or blanc / 8 / Laboratoires", price: 2900, available: true},
-      {title:"Or blanc / 8.5 / Naturels", price: 2900, available: true}, {title:"Or blanc / 8.5 / Laboratoires", price: 2900, available: true}, {title:"Or blanc / 9 / Naturels", price: 2900, available: true}, {title:"Or blanc / 9 / Laboratoires", price: 2900, available: true}
+      {title:"Or blanc / 8.5 / Naturels", price: 2900, available: true}, {title:"Or blanc / 8.5 / Laboratoires", price: 2900, available: true}, {title:"Or blanc / 9 / Naturels", price: 2900, available: true}, {title:"Or blanc / 9 / Laboratoires", price: 2900, available: true},
+      {title:"Platine / 4 / Naturels", price: 2900, available: true},
+      {title:"Platine / 4 / Laboratoires", price: 2900, available: true},
+      {title:"Platine / 4.5 / Naturels", price: 2900, available: true},
+      {title:"Platine / 4.5 / Laboratoires", price: 2900, available: true},
+      {title:"Platine / 5 / Naturels", price: 2900, available: true},
+      {title:"Platine / 5 / Laboratoires", price: 2900, available: true},
+      {title:"Platine / 5.5 / Naturels", price: 2900, available: true},
+      {title:"Platine / 5.5 / Laboratoires", price: 2900, available: true},
+      {title:"Platine / 6 / Naturels", price: 2900, available: true},
+      {title:"Platine / 6 / Laboratoires", price: 2900, available: true},
+      {title:"Platine / 6.5 / Naturels", price: 2900, available: true},
+      {title:"Platine / 6.5 / Laboratoires", price: 2900, available: true},
+      {title:"Platine / 7 / Naturels", price: 2900, available: true},
+      {title:"Platine / 7 / Laboratoires", price: 2900, available: true},
+      {title:"Platine / 7.5 / Naturels", price: 2900, available: true},
+      {title:"Platine / 7.5 / Laboratoires", price: 2900, available: true},
+      {title:"Platine / 8 / Naturels", price: 2900, available: true},
+      {title:"Platine / 8 / Laboratoires", price: 2900, available: true},
+      {title:"Platine / 8.5 / Naturels", price: 2900, available: true},
+      {title:"Platine / 8.5 / Laboratoires", price: 2900, available: true},
+      {title:"Platine / 9 / Naturels", price: 2900, available: true},
+      {title:"Platine / 9 / Laboratoires", price: 2900, available: true}
     ],
     priceFrom: 2900,
     priceNatural: 2900,
@@ -505,7 +607,7 @@ const ONEIRO_PRODUCTS = [
     handle: "iris",
     category: "bagues",
     customizable: true,
-    description: "Bague Iris – Diamant Poire Horizontal & Or 18K. Un design saisissant, où le regard se perd dans l'éclat d'une pierre fascinante. Cette bague met en scène un diamant taille poire de 2 carats, positionné à l'horizontale pour une silhouette avant-gardiste et hypnotique. Son serti bézel ouvert, finement travaillé en or 18 carats, encadre délicatement la pierre tout en laissant son dos visible, offrant une transparence et une lumière saisissantes. Avec son allure unique, évoquant un œil protecteur ou un talisman moderne, cette création allie mystère et élégance. Son design épuré et architectural joue sur les pleins et les vides, sublimant la pureté du diamant tout en créant une bague qui semble flotter sur la peau. Entièrement fabriquée en France, cette pièce incarne une vision contemporaine du luxe, où la lumière et l'or se rencontrent pour créer une aura envoûtante.",
+    description: "Bague Iris - Diamant Poire Horizontal & Or 18K. Un design saisissant, où le regard se perd dans l'éclat d'une pierre fascinante. Cette bague met en scène un diamant taille poire de 2 carats, positionné à l'horizontale pour une silhouette avant-gardiste et hypnotique. Son serti bézel ouvert, finement travaillé en or 18 carats, encadre délicatement la pierre tout en laissant son dos visible, offrant une transparence et une lumière saisissantes. Avec son allure unique, évoquant un œil protecteur ou un talisman moderne, cette création allie mystère et élégance. Son design épuré et architectural joue sur les pleins et les vides, sublimant la pureté du diamant tout en créant une bague qui semble flotter sur la peau. Entièrement fabriquée en France, cette pièce incarne une vision contemporaine du luxe, où la lumière et l'or se rencontrent pour créer une aura envoûtante.",
     options: [
       {name:"Couleur", values:["Or blanc","Platine","Or rose","Or"]},
       {name:"Type de Diamant", values:["Naturel","Laboratoire"]}
@@ -536,7 +638,7 @@ const ONEIRO_PRODUCTS = [
     handle: "selena",
     category: "bagues",
     customizable: true,
-    description: "Bague Selena – Diamant Marquise & Pavage en Or 18K. Une bague digne d'une reine, où l'éclat et l'élégance s'unissent en une harmonie parfaite. Son centre est illuminé par un diamant taille marquise de 1.75 carat, une pierre aux proportions exquises, dont les courbes allongées captent la lumière avec une intensité fascinante. Épousant la pierre avec grâce, une monture en or 18 carats sertie d'un pavage de diamants dessine une silhouette inspirée des couronnes royales. Chaque détail de ce bijou est pensé pour créer un jeu de lumière somptueux, sublimant la brillance du diamant central et évoquant un éclat presque céleste. Entièrement fabriquée en France, cette bague incarne le savoir-faire joaillier dans toute sa splendeur, une pièce d'exception pensée pour celles qui règnent avec audace et raffinement.",
+    description: "Bague Selena - Diamant Marquise & Pavage en Or 18K. Une bague digne d'une reine, où l'éclat et l'élégance s'unissent en une harmonie parfaite. Son centre est illuminé par un diamant taille marquise de 1.75 carat, une pierre aux proportions exquises, dont les courbes allongées captent la lumière avec une intensité fascinante. Épousant la pierre avec grâce, une monture en or 18 carats sertie d'un pavage de diamants dessine une silhouette inspirée des couronnes royales. Chaque détail de ce bijou est pensé pour créer un jeu de lumière somptueux, sublimant la brillance du diamant central et évoquant un éclat presque céleste. Entièrement fabriquée en France, cette bague incarne le savoir-faire joaillier dans toute sa splendeur, une pièce d'exception pensée pour celles qui règnent avec audace et raffinement.",
     options: [
       {name:"Couleur", values:["Or blanc","Platine","Or rose","Or"]},
       {name:"Type de Diamant", values:["Naturel","Laboratoire"]}
@@ -567,7 +669,7 @@ const ONEIRO_PRODUCTS = [
     handle: "sofia",
     category: "bagues",
     customizable: true,
-    description: "Bague Sofia – Diamant Asscher, Pavage & Or 18K. Un équilibre parfait entre modernité et intemporalité. Cette bague sublime un diamant taille Asscher de 2 carats, dont les facettes infinies capturent la lumière avec une profondeur envoûtante. Sertie dans un bézel d'or 18 carats, la pierre semble fusionner avec la monture, épousant délicatement le doigt pour un porté d'une fluidité absolue. Un pavage de diamants minutieux vient souligner l'éclat du bijou, créant un jeu de reflets subtils entre l'or et la lumière. Son design bas et structuré, à la fois architectural et raffiné, confère à cette bague une élégance affirmée, pensée pour traverser le temps avec grâce. Conçue et fabriquée en France avec un savoir-faire d'exception, cette pièce incarne une vision contemporaine du luxe, entre puissance et délicatesse.",
+    description: "Bague Sofia - Diamant Asscher, Pavage & Or 18K. Un équilibre parfait entre modernité et intemporalité. Cette bague sublime un diamant taille Asscher de 2 carats, dont les facettes infinies capturent la lumière avec une profondeur envoûtante. Sertie dans un bézel d'or 18 carats, la pierre semble fusionner avec la monture, épousant délicatement le doigt pour un porté d'une fluidité absolue. Un pavage de diamants minutieux vient souligner l'éclat du bijou, créant un jeu de reflets subtils entre l'or et la lumière. Son design bas et structuré, à la fois architectural et raffiné, confère à cette bague une élégance affirmée, pensée pour traverser le temps avec grâce. Conçue et fabriquée en France avec un savoir-faire d'exception, cette pièce incarne une vision contemporaine du luxe, entre puissance et délicatesse.",
     options: [
       {name:"Couleur", values:["Or blanc","Platine","Or rose","Or"]},
       {name:"Type de Diamant", values:["Naturel","Laboratoire"]}
@@ -598,7 +700,7 @@ const ONEIRO_PRODUCTS = [
     handle: "daphne",
     category: "bagues",
     customizable: true,
-    description: "Bague Évanescence – Diamant Poire & Or 18K. Une création aérienne où la lumière et l'or se rencontrent dans un équilibre parfait. Cette bague au design audacieux s'ouvre délicatement en son centre, laissant flotter un diamant taille poire de 2 carats, telle une goutte de lumière suspendue sur la peau. Son éclat pur et fascinant semble défier la gravité, captant chaque reflet avec une intensité rare. La monture en or 18 carats, minimaliste et épurée, crée un jeu de vide et de plein qui accentue l'effet de lévitation du diamant. Une prouesse architecturale qui sublime l'essence même du bijou : la pureté et la grâce. Entièrement fabriquée en France, cette bague incarne l'innovation et le savoir-faire joaillier, offrant une interprétation contemporaine du luxe intemporel.",
+    description: "Bague Évanescence - Diamant Poire & Or 18K. Une création aérienne où la lumière et l'or se rencontrent dans un équilibre parfait. Cette bague au design audacieux s'ouvre délicatement en son centre, laissant flotter un diamant taille poire de 2 carats, telle une goutte de lumière suspendue sur la peau. Son éclat pur et fascinant semble défier la gravité, captant chaque reflet avec une intensité rare. La monture en or 18 carats, minimaliste et épurée, crée un jeu de vide et de plein qui accentue l'effet de lévitation du diamant. Une prouesse architecturale qui sublime l'essence même du bijou : la pureté et la grâce. Entièrement fabriquée en France, cette bague incarne l'innovation et le savoir-faire joaillier, offrant une interprétation contemporaine du luxe intemporel.",
     options: [
       {name:"Couleur", values:["Or rose","Platine","Or","Or blanc"]},
       {name:"Type de Diamant", values:["Naturel","Laboratoire"]}
@@ -629,7 +731,7 @@ const ONEIRO_PRODUCTS = [
     handle: "kyra",
     category: "bagues",
     customizable: true,
-    description: "Bague Kyra Ovale – Diamant 2ct & Pavage en Or 18K. Une véritable œuvre d'art joaillière, où la courbe et la lumière s'entrelacent avec une grâce infinie. Cette bague sculpturale met en avant un diamant taille ovale de 2 carats, éclatant de pureté et de raffinement. Son éclat est sublimé par un magnifique pavage de diamants, habillant la monture d'un halo lumineux qui accentue chaque mouvement. Conçue en or 18 carats, cette création tout en courbes incarne un équilibre parfait entre architecture et poésie. Chaque ligne a été pensée pour offrir un porté à la fois fluide et aérien, soulignant la beauté intemporelle de son design. Fabriquée en France avec un savoir-faire d'exception, cette bague est une ode à l'élégance contemporaine, un bijou d'exception destiné à traverser les générations.",
+    description: "Bague Kyra Ovale - Diamant 2ct & Pavage en Or 18K. Une véritable œuvre d'art joaillière, où la courbe et la lumière s'entrelacent avec une grâce infinie. Cette bague sculpturale met en avant un diamant taille ovale de 2 carats, éclatant de pureté et de raffinement. Son éclat est sublimé par un magnifique pavage de diamants, habillant la monture d'un halo lumineux qui accentue chaque mouvement. Conçue en or 18 carats, cette création tout en courbes incarne un équilibre parfait entre architecture et poésie. Chaque ligne a été pensée pour offrir un porté à la fois fluide et aérien, soulignant la beauté intemporelle de son design. Fabriquée en France avec un savoir-faire d'exception, cette bague est une ode à l'élégance contemporaine, un bijou d'exception destiné à traverser les générations.",
     options: [
       {name:"Couleur", values:["Or","Platine","Or rose","Or blanc"]},
       {name:"Type de Diamant", values:["Naturel","Laboratoire"]}
@@ -660,7 +762,7 @@ const ONEIRO_PRODUCTS = [
     handle: "mia",
     category: "bagues",
     customizable: false,
-    description: "Bague Toi & Moi – Diamants Poire & Pavage en Or 18K. Élégance et raffinement s'unissent dans cette bague Toi & Moi, une création joaillière d'exception qui célèbre l'amour et la dualité avec éclat. Son design emblématique met en scène deux superbes diamants taille poire de 1 carat chacun, délicatement opposés pour symboliser l'union parfaite. La monture en or 18 carats, subtilement courbée, est sublimée par un fin pavage de diamants qui accentue l'éclat des pierres principales et apporte une touche de lumière supplémentaire. Chaque détail a été pensé pour magnifier cette pièce unique, entièrement réalisée en France dans le respect des traditions joaillières. Une bague précieuse et intemporelle, conçue pour célébrer les plus belles histoires d'amour.",
+    description: "Bague Toi & Moi - Diamants Poire & Pavage en Or 18K. Élégance et raffinement s'unissent dans cette bague Toi & Moi, une création joaillière d'exception qui célèbre l'amour et la dualité avec éclat. Son design emblématique met en scène deux superbes diamants taille poire de 1 carat chacun, délicatement opposés pour symboliser l'union parfaite. La monture en or 18 carats, subtilement courbée, est sublimée par un fin pavage de diamants qui accentue l'éclat des pierres principales et apporte une touche de lumière supplémentaire. Chaque détail a été pensé pour magnifier cette pièce unique, entièrement réalisée en France dans le respect des traditions joaillières. Une bague précieuse et intemporelle, conçue pour célébrer les plus belles histoires d'amour.",
     options: [
       {name:"Couleur", values:["Or blanc","Platine","Or rose","Or"]},
       {name:"Type de Diamant", values:["Naturel","Laboratoire"]}

@@ -12,6 +12,28 @@ ONE = "https://oneiroparis.com/cdn/shop/files/"
 ARTICLES = {
 
     # ---------------------------------------------------------------- ACTU --
+    "fiancailles-charles-leclerc": {
+        "date": "2026-10-20", "section": "actu",
+        "image": ONE + "IMG_1941_5ff1e509-7ac5-43e4-a26b-c35377306eb3.jpg",
+        "products": ["ami", "kyra", "sofia"],
+        "fr": {
+            "slug": "bague-de-fiancailles-charles-leclerc",
+            "cat": "Actualité, Célébrités",
+            "card": "La bague de fiançailles d'Alexandra Saint Mleux et Charles Leclerc",
+            "teaser": "Un diamant ovale d'exception sur anneau pavé : décryptage technique d'un grand classique.",
+            "title": "Bague de fiançailles de Charles Leclerc : décryptage | Oneiro",
+            "desc": "Diamant ovale généreux et anneau fin pavé : retour sur la bague de fiançailles d'Alexandra Saint Mleux et Charles Leclerc, et comment transposer ce parti pris sur-mesure.",
+        },
+        "en": {
+            "slug": "charles-leclerc-engagement-ring",
+            "cat": "News, Celebrities",
+            "card": "Charles Leclerc and Alexandra Saint Mleux: the engagement ring",
+            "teaser": "An exceptional oval diamond on a pavé band: technical breakdown of a timeless classic.",
+            "title": "Charles Leclerc engagement ring: breakdown | Oneiro",
+            "desc": "A generous oval diamond and delicate pavé band: a close look at Alexandra Saint Mleux and Charles Leclerc's engagement ring, and how to create a bespoke equivalent.",
+        },
+    },
+
     "or-record-2026": {
         "date": "2026-09-18", "section": "actu",
         "image": ONE + "Photoroom_20250203_113624.jpg",

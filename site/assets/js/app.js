@@ -10,6 +10,7 @@ const ONEIRO_I18N = {
     locale: "fr-FR",
     productDir: "produits/",
     onRequest: "Sur demande",
+    priceOnRequest: "Prix sur demande",
     cat: { "bagues": "Bague", "boucles-oreilles": "Boucles d'oreilles", "colliers": "Collier", "bracelets": "Bracelet", "default": "Bijou" },
     orLab: p => `ou ${p} en diamant de laboratoire`,
     customizable: "Personnalisable",
@@ -30,6 +31,7 @@ const ONEIRO_I18N = {
     locale: "en-GB",
     productDir: "products/",
     onRequest: "On request",
+    priceOnRequest: "Price on request",
     cat: { "bagues": "Ring", "boucles-oreilles": "Earrings", "colliers": "Necklace", "bracelets": "Bracelet", "default": "Jewellery" },
     orLab: p => `or ${p} with a lab-grown diamond`,
     customizable: "Customisable",
@@ -83,18 +85,16 @@ const O = {
 
   // Carte produit (collection, suggestions, accueil)
   card(p) {
-    const lab = p.priceLab ? `<small>${T.orLab(this.fmt(p.priceLab))}</small>` : "";
     const badge = p.customizable ? `<span class="card__badge">${T.customizable}</span>` : "";
     const title = this.title(p);
-    const img = p.images && p.images[0] ? `<img src="${this.img(p.images[0], 720)}" alt="${title} — Oneiro Paris" loading="lazy">` : "";
-    const from = (p.priceNatural && p.priceLab && p.priceNatural !== p.priceLab) || p.variants.length > 1 ? T.from : "";
+    const img = p.images && p.images[0] ? `<img src="${this.img(p.images[0], 720)}" alt="${title} - Oneiro Paris" loading="lazy">` : "";
     return `
       <a class="card reveal" href="${T.productDir}${p.handle}.html">
         <div class="card__img">${img}${badge}${this.wishBtn(p.handle)}</div>
         <div class="card__body">
           <span class="card__cat">${this.catLabel(p.category)}</span>
           <span class="card__title">${title}</span>
-          <span class="card__price">${from}${this.fmt(p.priceNatural || p.priceFrom)}${lab}</span>
+          <span class="card__price">${T.priceOnRequest}</span>
         </div>
       </a>`;
   },

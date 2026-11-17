@@ -1,4 +1,4 @@
-// Genere par _build/build.py depuis _build/products-en.json — ne pas editer a la main.
+// Genere par _build/build.py depuis _build/products-en.json - ne pas editer a la main.
 (function () {
   var M = {
   "bracelet-tennis-en-diamants": {
@@ -19,11 +19,11 @@
   },
   "elya": {
     "title": "ÉLYA",
-    "description": "Élya – Oneiro drop earrings. Infinitely graceful, our drop earrings catch the light in a spellbinding shimmer. A pavé of diamonds sparkles with intensity, revealing every facet of pure brilliance, while pear-cut diamonds sway gently, like drops of suspended light. Every detail embodies airy elegance and absolute refinement, the Oneiro signature. Designed to magnify every movement, they light up the face with a sophisticated glow, perfect for a precious occasion or for timeless luxury worn every day. A dream of light, sculpted into eternity."
+    "description": "Élya - Oneiro drop earrings. Infinitely graceful, our drop earrings catch the light in a spellbinding shimmer. A pavé of diamonds sparkles with intensity, revealing every facet of pure brilliance, while pear-cut diamonds sway gently, like drops of suspended light. Every detail embodies airy elegance and absolute refinement, the Oneiro signature. Designed to magnify every movement, they light up the face with a sophisticated glow, perfect for a precious occasion or for timeless luxury worn every day. A dream of light, sculpted into eternity."
   },
   "lena": {
     "title": "LÉNA",
-    "description": "Timeless brilliance – Léna earrings. A symbol of purity and refinement, our stud earrings capture the very essence of timeless elegance. Made with exquisite precision, they light up the face with a subtle glow, revealing beauty in its most pared-back form. Each pair is an invitation to sophisticated simplicity, an everyday piece that elevates effortlessly. Their minimalist design, heightened by precious materials, reflects the Oneiro vision: a dream of light and perfection. Worn alone for a discreet touch or paired with other creations, these earrings embody natural elegance and the timelessness of French luxury."
+    "description": "Timeless brilliance - Léna earrings. A symbol of purity and refinement, our stud earrings capture the very essence of timeless elegance. Made with exquisite precision, they light up the face with a subtle glow, revealing beauty in its most pared-back form. Each pair is an invitation to sophisticated simplicity, an everyday piece that elevates effortlessly. Their minimalist design, heightened by precious materials, reflects the Oneiro vision: a dream of light and perfection. Worn alone for a discreet touch or paired with other creations, these earrings embody natural elegance and the timelessness of French luxury."
   },
   "collier": {
     "title": "LYRA",
@@ -31,11 +31,11 @@
   },
   "bague-7": {
     "title": "CATALINA",
-    "description": ""
+    "description": "A modern solitaire ring of timeless charm. Catalina showcases a dazzling centre diamond set upon a delicate, refined gold or platinum band, designed to capture light from every angle. A luminous and sophisticated creation, ideal for celebrating a precious commitment."
   },
   "bague-8": {
     "title": "DORA",
-    "description": ""
+    "description": "A union of architectural elegance and delicacy. The Dora ring highlights a graceful and contemporary silhouette, where the purity of the diamond harmonises with the fineness of a precious gold or platinum band. A delicate, sparkling piece, crafted for everyday radiance or an unforgettable moment."
   },
   "bague-6": {
     "title": "PERSÉE",
@@ -67,27 +67,27 @@
   },
   "iris": {
     "title": "IRIS",
-    "description": "Iris ring – Horizontal pear diamond & 18K gold. A striking design, where the eye loses itself in the brilliance of a fascinating stone. This ring stages a 2 carat pear cut diamond, set horizontally for an avant-garde, hypnotic silhouette. Its open bezel setting, finely worked in 18 carat gold, frames the stone delicately while leaving its back visible, offering striking transparency and light. With its singular presence, evoking a protective eye or a modern talisman, this creation combines mystery with elegance. Its pared-back, architectural design plays on solids and voids, heightening the purity of the diamond and creating a ring that seems to float on the skin. Made entirely in France, this piece embodies a contemporary vision of luxury, where light and gold meet to create a spellbinding aura."
+    "description": "Iris ring - Horizontal pear diamond & 18K gold. A striking design, where the eye loses itself in the brilliance of a fascinating stone. This ring stages a 2 carat pear cut diamond, set horizontally for an avant-garde, hypnotic silhouette. Its open bezel setting, finely worked in 18 carat gold, frames the stone delicately while leaving its back visible, offering striking transparency and light. With its singular presence, evoking a protective eye or a modern talisman, this creation combines mystery with elegance. Its pared-back, architectural design plays on solids and voids, heightening the purity of the diamond and creating a ring that seems to float on the skin. Made entirely in France, this piece embodies a contemporary vision of luxury, where light and gold meet to create a spellbinding aura."
   },
   "selena": {
     "title": "SELENA",
-    "description": "Selena ring – Marquise diamond & pavé in 18K gold. A ring worthy of a queen, where brilliance and elegance unite in perfect harmony. Its centre is lit by a 1.75 carat marquise cut diamond, a stone of exquisite proportions whose elongated curves catch the light with fascinating intensity. Embracing the stone with grace, an 18 carat gold setting paved with diamonds traces a silhouette inspired by royal crowns. Every detail of this piece is designed to create a sumptuous play of light, heightening the brilliance of the centre diamond and evoking an almost celestial glow. Made entirely in France, this ring embodies jewellery craftsmanship in all its splendour, an exceptional piece made for those who reign with boldness and refinement."
+    "description": "Selena ring - Marquise diamond & pavé in 18K gold. A ring worthy of a queen, where brilliance and elegance unite in perfect harmony. Its centre is lit by a 1.75 carat marquise cut diamond, a stone of exquisite proportions whose elongated curves catch the light with fascinating intensity. Embracing the stone with grace, an 18 carat gold setting paved with diamonds traces a silhouette inspired by royal crowns. Every detail of this piece is designed to create a sumptuous play of light, heightening the brilliance of the centre diamond and evoking an almost celestial glow. Made entirely in France, this ring embodies jewellery craftsmanship in all its splendour, an exceptional piece made for those who reign with boldness and refinement."
   },
   "sofia": {
     "title": "SOFIA",
-    "description": "Sofia ring – Asscher diamond, pavé & 18K gold. A perfect balance between modernity and timelessness. This ring elevates a 2 carat Asscher cut diamond, whose infinite facets capture light with spellbinding depth. Set in an 18 carat gold bezel, the stone seems to merge with the setting, sitting delicately on the finger for an absolutely fluid wear. A meticulous pavé of diamonds underlines the brilliance of the piece, creating a subtle play of reflections between gold and light. Its low, structured design, at once architectural and refined, gives this ring an assured elegance, made to travel through time with grace. Designed and made in France with exceptional craftsmanship, this piece embodies a contemporary vision of luxury, between power and delicacy."
+    "description": "Sofia ring - Asscher diamond, pavé & 18K gold. A perfect balance between modernity and timelessness. This ring elevates a 2 carat Asscher cut diamond, whose infinite facets capture light with spellbinding depth. Set in an 18 carat gold bezel, the stone seems to merge with the setting, sitting delicately on the finger for an absolutely fluid wear. A meticulous pavé of diamonds underlines the brilliance of the piece, creating a subtle play of reflections between gold and light. Its low, structured design, at once architectural and refined, gives this ring an assured elegance, made to travel through time with grace. Designed and made in France with exceptional craftsmanship, this piece embodies a contemporary vision of luxury, between power and delicacy."
   },
   "daphne": {
     "title": "DAPHNE",
-    "description": "Évanescence ring – Pear diamond & 18K gold. An airy creation where light and gold meet in perfect balance. This boldly designed ring opens delicately at its centre, letting a 2 carat pear cut diamond float like a drop of light suspended on the skin. Its pure, fascinating brilliance seems to defy gravity, catching every reflection with rare intensity. The 18 carat gold setting, minimalist and pared back, creates a play of solids and voids that heightens the levitating effect of the diamond. An architectural feat that elevates the very essence of jewellery: purity and grace. Made entirely in France, this ring embodies innovation and jewellery craftsmanship, offering a contemporary interpretation of timeless luxury."
+    "description": "Évanescence ring - Pear diamond & 18K gold. An airy creation where light and gold meet in perfect balance. This boldly designed ring opens delicately at its centre, letting a 2 carat pear cut diamond float like a drop of light suspended on the skin. Its pure, fascinating brilliance seems to defy gravity, catching every reflection with rare intensity. The 18 carat gold setting, minimalist and pared back, creates a play of solids and voids that heightens the levitating effect of the diamond. An architectural feat that elevates the very essence of jewellery: purity and grace. Made entirely in France, this ring embodies innovation and jewellery craftsmanship, offering a contemporary interpretation of timeless luxury."
   },
   "kyra": {
     "title": "KYRA",
-    "description": "Kyra oval ring – 2ct diamond & pavé in 18K gold. A true work of the jeweller's art, where curve and light interlace with infinite grace. This sculptural ring brings forward a 2 carat oval cut diamond, radiant with purity and refinement. Its brilliance is heightened by a magnificent pavé of diamonds, dressing the setting in a luminous halo that accentuates every movement. Made in 18 carat gold, this creation of pure curves embodies a perfect balance between architecture and poetry. Every line has been designed for a wear that is both fluid and airy, underlining the timeless beauty of its design. Made in France with exceptional craftsmanship, this ring is an ode to contemporary elegance, an exceptional piece destined to cross generations."
+    "description": "Kyra oval ring - 2ct diamond & pavé in 18K gold. A true work of the jeweller's art, where curve and light interlace with infinite grace. This sculptural ring brings forward a 2 carat oval cut diamond, radiant with purity and refinement. Its brilliance is heightened by a magnificent pavé of diamonds, dressing the setting in a luminous halo that accentuates every movement. Made in 18 carat gold, this creation of pure curves embodies a perfect balance between architecture and poetry. Every line has been designed for a wear that is both fluid and airy, underlining the timeless beauty of its design. Made in France with exceptional craftsmanship, this ring is an ode to contemporary elegance, an exceptional piece destined to cross generations."
   },
   "mia": {
     "title": "MIA",
-    "description": "Toi & Moi ring – Pear diamonds & pavé in 18K gold. Elegance and refinement unite in this Toi & Moi ring, an exceptional piece of jewellery that celebrates love and duality with brilliance. Its emblematic design stages two superb pear cut diamonds of 1 carat each, delicately facing one another to symbolise the perfect union. The 18 carat gold setting, subtly curved, is heightened by a fine pavé of diamonds that accentuates the brilliance of the principal stones and brings an additional touch of light. Every detail has been designed to magnify this unique piece, made entirely in France in the respect of jewellery traditions. A precious and timeless ring, made to celebrate the most beautiful love stories."
+    "description": "Toi & Moi ring - Pear diamonds & pavé in 18K gold. Elegance and refinement unite in this Toi & Moi ring, an exceptional piece of jewellery that celebrates love and duality with brilliance. Its emblematic design stages two superb pear cut diamonds of 1 carat each, delicately facing one another to symbolise the perfect union. The 18 carat gold setting, subtly curved, is heightened by a fine pavé of diamonds that accentuates the brilliance of the principal stones and brings an additional touch of light. Every detail has been designed to magnify this unique piece, made entirely in France in the respect of jewellery traditions. A precious and timeless ring, made to celebrate the most beautiful love stories."
   }
 };
   if (typeof ONEIRO_PRODUCTS === 'undefined') return;

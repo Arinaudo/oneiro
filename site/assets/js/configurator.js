@@ -204,35 +204,56 @@
     }).format(n);
   }
 
-  // Estimation locale de reference en cas d'absence d'API ou de reseau
+  // Grille officielle des marges boutique Oneiro (extraite des reglages Nivoda / Boutique)
+  function getBoutiqueMultiplier(origin, carat) {
+    if (origin === "lab") {
+      if (carat <= 0.50) return 6.00;       // +500 %
+      if (carat <= 0.70) return 7.00;       // +600 %
+      if (carat <= 1.00) return 8.00;       // +700 %
+      if (carat <= 2.00) return 11.00;      // +1000 %
+      return 9.00;                          // +800 %
+    } else {
+      if (carat <= 0.50) return 1.80;       // +80 %
+      if (carat <= 0.70) return 1.70;       // +70 %
+      if (carat <= 1.00) return 1.65;       // +65 %
+      if (carat <= 1.10) return 1.50;       // +50 %
+      if (carat <= 1.50) return 1.45;       // +45 %
+      if (carat <= 2.00) return 1.40;       // +40 %
+      if (carat <= 3.00) return 1.30;       // +30 %
+      if (carat <= 5.00) return 1.25;       // +25 %
+      return 1.18;                          // +18 %
+    }
+  }
+
+  // Estimation locale de reference en appliquant la marge de la boutique
   function computeMarketRange(st) {
     const isLab = st.origin === "lab";
     const carat = Math.max(0.3, Math.min(st.carat, 5.0));
 
-    // Base carat exponentielle
-    const baseNatural = 2400 * Math.pow(carat, 1.95);
-    const baseLab = 480 * Math.pow(carat, 1.35);
-    let p = isLab ? baseLab : baseNatural;
+    // Base carat de gros (marche mondial)
+    const baseNaturalWholesale = 1450 * Math.pow(carat, 1.95);
+    const baseLabWholesale = 85 * Math.pow(carat, 1.45);
+    let wholesale = isLab ? baseLabWholesale : baseNaturalWholesale;
 
     // Facteur forme
     const shapeFactors = {
       Round: 1.0, Oval: 0.92, Pear: 0.90, Emerald: 0.88,
       Cushion: 0.89, Radiant: 0.86, Marquise: 0.90, Princess: 0.85, Asscher: 0.88
     };
-    p *= (shapeFactors[st.shape] || 0.90);
+    wholesale *= (shapeFactors[st.shape] || 0.90);
 
     // Facteur couleur
     if (st.colorMode === "fancy") {
       const fc = FANCY_COLORS.find(x => x.id === st.fancyColor) || FANCY_COLORS[0];
       const factor = isLab ? (1 + (fc.factor - 1) * 0.4) : fc.factor;
-      p *= factor;
+      wholesale *= factor;
     } else {
       const colorFactors = {
         "D": 1.25, "E": 1.15, "F": 1.05,
         "G": 0.96, "H": 0.88, "I": 0.78, "J": 0.70,
         "K-L": 0.60, "M-N": 0.52, "O-P": 0.45, "Q-R": 0.40, "S-Z": 0.35
       };
-      p *= (colorFactors[st.color] || 0.90);
+      wholesale *= (colorFactors[st.color] || 0.90);
     }
 
     // Facteur purete
@@ -240,16 +261,21 @@
       "FL": 1.45, "IF": 1.30, "VVS1": 1.18, "VVS2": 1.08,
       "VS1": 0.98, "VS2": 0.88, "SI1": 0.75, "SI2": 0.65
     };
-    p *= (clarityFactors[st.clarity] || 0.95);
+    wholesale *= (clarityFactors[st.clarity] || 0.95);
 
     // Facteur fluorescence
-    if (st.fluorescence === "Faint") p *= 0.97;
-    if (st.fluorescence === "Medium") p *= 0.92;
+    if (st.fluorescence === "Faint") wholesale *= 0.97;
+    if (st.fluorescence === "Medium") wholesale *= 0.92;
 
-    // Calcul de la fourchette indicative [-6%, +7%]
-    const low = Math.round((p * 0.94) / 50) * 50;
-    const high = Math.round((p * 1.07) / 50) * 50;
-    return { low: Math.max(low, isLab ? 300 : 700), high: Math.max(high, isLab ? 400 : 850) };
+    // Application de la marge boutique Oneiro + frais fixes (180 EUR) + TVA francaise (20 %)
+    const mult = getBoutiqueMultiplier(st.origin, carat);
+    const retailHT = wholesale * mult + 180;
+    const retailTTC = retailHT * 1.20;
+
+    // Calcul de la fourchette indicative [-5 %, +8 %]
+    const low = Math.round((retailTTC * 0.95) / 50) * 50;
+    const high = Math.round((retailTTC * 1.08) / 50) * 50;
+    return { low: Math.max(low, isLab ? 350 : 800), high: Math.max(high, isLab ? 450 : 950) };
   }
 
   const Configurator = {
